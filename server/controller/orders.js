@@ -1,5 +1,46 @@
 const Orders = require('../models/Orders')
 
+const index = async (req, res) => {
+    try {
+        const orders = await Orders.getAll()
+        res.status(200).json(orders)
+    } catch (error) {
+        res.status(404).json({error: error.message})
+    }
+}
+
+const show = async (req, res) => {
+    try{
+        const order = req.params.id
+        const newOrder = await Orders.getById(order)
+        res.status(200).json(newOrder)
+
+    }catch(error){
+      res.status(404).json({error: error.message})
+    }
+}
+
+const createOrder = async (req, res) => {
+    try{
+        const {order_id, user_id, book_id, collection_date, order_reference} = req.body
+        const newOrder = await Orders.createOrder(order_id, user_id, book_id, collection_date, order_reference)
+        res.status(200).json(newOrder)
+
+    }catch(error){
+      res.status(404).json({error: error.message})
+    }
+}
+
+const updateOrder = async (req, res) => {
+    try{
+        const {order_id, user_id, book_id, collection_date, order_reference} = req.body
+        const updatedOrder = await Orders.updateOrder(order_id, user_id, book_id, collection_date, order_reference)
+        res.status(200).json(updatedOrder)
+
+    }catch(error){
+      res.status(404).json({error: error.message})
+    }
+}
 
 
-module.exports = {}
+module.exports = {index, show, createOrder, updateOrder}
