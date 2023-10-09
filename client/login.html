@@ -4,24 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/default.css">
     <title>Login</title>
 </head>
 <body>
     <iframe src="navbar.html" frameborder="0" scrolling="no" width="100%" height="100"></iframe>
 
-    <form action="" id="login">
-        <fieldset>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username">
-        </fieldset>
-        <fieldset>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password">
-        </fieldset>
-        <input type="submit" value="Log in">
-    </form>
-    <p>No account? <a id="registerA" href="./register.html">Sign up here</a>.</p>
-    <iframe src="footer.html" frameborder="0" scrolling="no" width="100%" height="100"></iframe>
+        <div class="container">
+        <div class="formBody">
+            <form action="" id="login">
+                <fieldset>
+                    <label for="username">Username: </label>
+                    <input type="text" id="username" name="username">
+                </fieldset>
+                <fieldset>
+                    <label for="password">Password: </label>
+                    <input type="password" id="password" name="password">
+                </fieldset>
+                <div id="submitbn">
+                <input type="submit" value="Log in"> 
+                </div>
+            </form>
+        </div>
+        <p> No account?&emsp; <a id="register" href="./register.html"> Sign up here</a>.</p>
+        </div>  
 
-</body>
+    <iframe src="footer.html" frameborder="0" scrolling="no" width="100%" height="100"></iframe>
+    </body>
 </html>

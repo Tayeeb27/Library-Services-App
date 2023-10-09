@@ -3,29 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="register.html">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="css/default.css">
+    <title>Register</title>
 </head>
 <body>
     <iframe src="navbar.html" frameborder="0" scrolling="no" width="100%" height="100"></iframe>
 
-    <form action="" id="login">
-        <fieldset>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name">
-        </fieldset>
-        <fieldset>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username">
-        </fieldset>
-        <fieldset>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password">
-        </fieldset>
-        <input type="submit" value="Sign up">
-    </form>
+    <div class="container">
+    <div class="formBody">
+        <form action="" id="login">
+            <fieldset>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+            </fieldset>
+            <fieldset>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username">
+            </fieldset>
+            <fieldset>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+            </fieldset>
+            <input type="submit" value="Sign up">
+        </form>
+    </div>
     <p>Already have an account? <a id="registerA" href="./login.html">Login here</a>.</p>
+    </div>
     <iframe src="footer.html" frameborder="0" scrolling="no" width="100%" height="100"></iframe>
-  
 </body>
 </html>
