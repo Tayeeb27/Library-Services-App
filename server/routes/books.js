@@ -1,9 +1,11 @@
 const { Router } = require('express')
-const bookRouter = ("../controllers/book")
+const bookRouter = require('../controller/books')
 const bRouter = Router();
 
 
 bRouter.get("/", bookRouter.index)
+bRouter.get("/title/:title", bookRouter.bookName)
+bRouter.get("/category/:category", bookRouter.bookCategory)
 
 
 

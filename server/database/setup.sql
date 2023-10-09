@@ -21,7 +21,8 @@ VALUES
 ('When in Rome', 'Sarah Adams', 'When in Rome: The deliciously charming rom-com from the author of the TikTok sensation, THE CHEAT SHEET!', 'Fiction', 4.0, '2022-09-20', 'https://m.media-amazon.com/images/I/41esrpLG2BL._SY445_SX342_.jpg'),
 ('Harry Potter', 'J. K. Rowling', 'The novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry', 'Fantasy', 4.8, '1997-06-25', 'https://m.media-amazon.com/images/I/51zZ3SAulVL._SY445_SX342_.jpg'),
 ('The Idiot', 'Fyodor Dostoevsky', '“The Idiot” tells the story of a young prince called Lev Nikolayevich Myshkin whose simple goodness is wrongly confused with a lack of intelligence by all he encounters.', 'Foreign', 4.5, '1868-01-01', 'https://m.media-amazon.com/images/I/71ODBY2ChvL._SY466_.jpg'),
-('Doll House', 'John Hunt', 'A Doll house Horror Story', 'Horror', 4.4, '2017-01-25', 'https://m.media-amazon.com/images/I/81HRGUehn1L._SY385_.jpg');
+('Doll House', 'John Hunt', 'A Doll house Horror Story', 'Horror', 4.4, '2017-01-25', 'https://m.media-amazon.com/images/I/81HRGUehn1L._SY385_.jpg'),
+
 
 -- Drop and create the "users" table
 DROP TABLE IF EXISTS users;
