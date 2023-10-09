@@ -1,0 +1,42 @@
+.container {
+    width: 500px;
+    margin: auto;
+    border-style: outset;
+    border-color: #ff4d6d;
+}
+
+/* Form css */
+.formBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: inline-block;
+    padding: 2px;
+}
+
+fieldset {
+    font-size: larger;
+    margin-top: 10px;
+    border-style: none;
+    padding: 10px;
+    display: flex;
+}
+
+
+#login input {
+    font-size: large;
+}
+
+#login input[type="submit"] {
+    margin-top: 10px;
+    margin-left: 40%;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

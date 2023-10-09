@@ -1,27 +1,29 @@
+<link rel="stylesheet" href="css/default.css">
 <!-- old nav bar -->
 <nav>
+    <span class="title">Library Services <img src="assets/book.ico" alt="Logo" width="30" height="24"> </span>
     <ul>
-        <li><span class="title">Library Services <img src="assets/book.ico" alt="Logo" width="20" height="16" class="d-inline-block align-text-top"> </span></li>
         <li>
-            <a href="home.html">Home</a>
+            <a class="navBn" href="home.html">Home</a>
         </li>
         <li>
-            <a href="about.html">About</a>
+            <a class="navBn" href="about.html">About</a>
         </li>
         <li>
-            <a href="book.html">Book</a>
+            <a class="navBn" href="book.html">Book</a>
         </li>
         <li>
-            <a href="contact.html">Contact</a>
+            <a class="navBn" href="contact.html">Contact</a>
         </li>
         <li>
-            <a href="login.html">Login</a>
+            <a class="navBn" href="login.html">Login</a>
         </li>
     </ul>
 </nav>
+
 <style>
     nav {
-        background-color: #333;
+        background-color: #800f2f;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -29,11 +31,12 @@
     nav ul {
         list-style-type: none;
         margin: 0;
-        padding: 0;
+        padding: 5px;
         overflow: hidden;
     }
     nav li {
         float: left;
+        padding: 3px;
         
     }
     nav li a {
@@ -47,11 +50,17 @@
         display: block;
         color: white;
         text-align: center;
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-size: 18px;
         padding: 14px 16px;
         text-decoration: none;
-        margin-right: 1100px;
+        
     }
     nav li a:hover {
-        background-color: #555;
+        background-color: #ff4d6d;
     }
+
+    
+
 </style>
