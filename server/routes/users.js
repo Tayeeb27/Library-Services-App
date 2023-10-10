@@ -4,10 +4,10 @@ const uRouter = Router();
 
 uRouter.get("/", userRouter.index)
 
-uRouter.get("/:user_id", userRouter.showId)
+uRouter.get("/:id", userRouter.showId)
 uRouter.post("/", userRouter.createUser)
-uRouter.patch("/:user_id", userRouter.updateUser)
-uRouter.delete("/:user_id", userRouter.destroy)
+uRouter.patch("/:id", userRouter.updateUser)
+uRouter.delete("/:id", userRouter.destroy)
 
 
 

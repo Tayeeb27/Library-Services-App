@@ -20,21 +20,20 @@ const show = async (req, res) => {
     }
 }
 
-const createOrder = async (req, res) => {
+const  createOrder = async (req, res) => {
     try{
-        const {order_id, user_id, book_id, collection_date, order_reference} = req.body
-        const newOrder = await Orders.createOrder(order_id, user_id, book_id, collection_date, order_reference)
-        res.status(200).json(newOrder)
-
-    }catch(error){
-      res.status(404).json({error: error.message})
+        const data = req.body;
+        const newOrder = await Orders.createOrder(data);
+        res.status(201).json(newOrder);
+    }catch(err){
+        res.status(400).json({error: err.message});
     }
 }
 
 const updateOrder = async (req, res) => {
     try{
-        const {order_id, user_id, book_id, collection_date, order_reference} = req.body
-        const updatedOrder = await Orders.updateOrder(order_id, user_id, book_id, collection_date, order_reference)
+        const {user_id, book_id, collection_date, order_reference, order_id} = req.body
+        const updatedOrder = await Orders.updateOrder(user_id, book_id, collection_date, order_reference, order_id)
         res.status(200).json(updatedOrder)
 
     }catch(error){

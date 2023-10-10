@@ -13,7 +13,7 @@ const index = async (req, res) => {
 const showId = async (req, res) => {
     try{
         const user = req.params.id
-        const newUser = await Orders.getById(user)
+        const newUser = await Users.getById(user)
         res.status(200).json(newUser)
 
     }catch(error){
@@ -31,25 +31,36 @@ const  createUser = async (req, res) => {
 }
 
 const updateUser = async (req, res) => {
-try {
-    const data = req.body;
-    const updatedUser = await Users.updateUser(data)
-    res.status(201).json(updatedUser)
-} catch (error) {
-    res.status(404).json({error: error.message})
-}
-
-}
-
-const destroy = async (req, res) {
     try {
-        const id = parseInt(req.params.id);
-        const user = await Users.showId(id)
-        const deleteUser = await user.destroy(user)
-        res.status(200).end()
+      const id = req.params.id; // Assuming you're extracting the user ID from the request parameters
+      const data = req.body;
+      const updatedUser = await Users.updateUser(id, data); // Pass the user ID as the first argument
+      res.status(201).json(updatedUser);
     } catch (error) {
-        res.status(404).json({error: error.message})
+      res.status(404).json({ error: error.message });
     }
-}
+  };
+  
+
+  const destroy = async (req, res) => {
+    try {
+      const id = parseInt(req.params.id);
+      const user = await Users.destroy(id);
+  
+      if (!user) {
+        // Handle the case where the user with the given ID doesn't exist
+        res.status(404).json({ error: 'User not found' });
+        return;
+      }
+  
+      // Call the destroy method on the user object to delete it
+      await user.destroy();
+  
+      res.status(204).end();
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  };
+  
 
 module.exports = {index, showId, createUser, updateUser, destroy}
