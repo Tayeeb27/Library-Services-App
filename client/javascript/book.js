@@ -3,34 +3,42 @@ const createBookElement = (data) => {
     book.className = 'book';
     const title = document.createElement('h2');
     title.textContent = data['title'];
+    book.appendChild(title);
     const author = document.createElement('p');
     author.textContent = data['author'];
+    book.appendChild(author);
     const description = document.createElement('p');
     description.textContent = data['description'];
+    book.appendChild(description);
     const category = document.createElement('p');
     category.textContent = data['category'];
+    book.appendChild(category);
     const rating = document.createElement('p');
     rating.textContent = data['rating'];
+    book.appendChild(rating);
     const releaseYear = document.createElement('p');
     releaseYear.textContent = data['releaseYear'];
+    book.appendChild(releaseYear);
     const img = document.createElement('img');
     img.src = data['image_url']
-
+    book.appendChild(img);
     const reserveBtn = document.createElement('button');
     reserveBtn.textContent = 'Reserve'
+    book.appendChild(reserveBtn);
     reserveBtn.addEventListener('click', () =>{
 
     });
+    return book;
 }
 async function loadBooks () {
     try {
-      const response = await fetch("http://localhost:3000/book");
+      const response = await fetch("http://localhost:3000/books");
       const books = await response.json();
       if (response.status == 200) {
-        const container = document.getElementById("books");
+        const container = document.getElementById("booksContainer");
   
         books.forEach(b => {
-          const elem = createPostElement(b);
+          const elem = createBookElement(b);
           container.appendChild(elem);
         });
       } else {
@@ -54,11 +62,11 @@ async function loadBooks () {
           const response = await fetch(`http://localhost:3000/books/category/${link.textContent}`);
             const books = await response.json();
             if (response.status == 200) {
-              const container = document.getElementById("books");
+              const container = document.getElementById("booksContainer");
               container.innerHTML = "";
               category.textContent = "";
               books.forEach(b => {
-                const elem = createPostElement(b);
+                const elem = createBookElement(b);
                 container.appendChild(elem);
               });
             } else {
@@ -69,22 +77,20 @@ async function loadBooks () {
     });
 });
 
-const searchBtn = document.querySelector('#searchbookbtn');
+const searchBtn = document.getElementById('searchbookbtn');
 searchBtn.addEventListener('click', async(e)=>{
-  const searchTitle = document.querySelector('#searchbooktext');
+  const searchTitle = document.getElementById('searchbooktext');
   const searchTitleEncoded = encodeURIComponent(searchTitle.value)
   console.log(searchTitleEncoded)
   try {
   const response = await fetch(`http://localhost:3000/books/title/${searchTitleEncoded}`);
-    const posts = await response.json();
+    const books = await response.json();
     if (response.status == 200) {
-      const container = document.getElementById("posts");
+      const container = document.getElementById("booksContainer");
       container.innerHTML = "";
       category.textContent = "";
-      posts.forEach(p => {
-        const elem = createPostElement(p);
-        container.appendChild(elem);
-      });
+      const elem = createBookElement(books);
+      container.appendChild(elem);
     } else {
     }
   } catch (error) {
