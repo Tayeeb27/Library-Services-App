@@ -65,3 +65,12 @@ VALUES
 (2, 3, '2023-10-05', '1212'),
 (3, 5, '2023-01-01', '4321'),
 (4, 2, '2023-10-08', '2109');
+
+DROP TABLE IF EXISTS token;
+CREATE TABLE token (
+    token_id INT GENERATED ALWAYS AS IDENTITY,
+    user_id INT NOT NULL,
+    token CHAR(36) UNIQUE NOT NULL,
+    PRIMARY KEY (token_id),
+    FOREIGN KEY (user_id) REFERENCES user_account("user_id")
+);
