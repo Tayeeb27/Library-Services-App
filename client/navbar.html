@@ -68,9 +68,22 @@
 </nav>
 <script>
     const loginBtn = document.getElementById("login-logout");
+    const userLink = document.createElement("li");
+    const userAnchor = document.createElement("a");
+
     if (localStorage.getItem("token") !== null) {
-        loginBtn.textContent = "Logout"
+        loginBtn.textContent = "Logout";
+
+        // Create the User link
+        userAnchor.textContent = "User";
+        userAnchor.className = "navBn";
+        userAnchor.href = "user.html";
+        userLink.appendChild(userAnchor);
+        
+        // Insert the User link before the Login link
+        const loginLi = loginBtn.parentElement;
+        loginLi.parentNode.insertBefore(userLink, loginLi);
     } else {
-        loginBtn.textContent = "Login"
+        loginBtn.textContent = "Login";
     }
 </script>
