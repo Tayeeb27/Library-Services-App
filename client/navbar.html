@@ -65,7 +65,7 @@
             <a class="navBn" href="contact.html">Contact</a>
         </li>
         <li>
-            <a class="navBn" id="login-logout" href="login.html">Login</a>
+            <a class="navBn" id="login-logout" href="#">Login</a>
         </li>
     </ul>
 </nav>
@@ -100,5 +100,16 @@
     } else {
         loginBtn.textContent = "Login";
     }
+    loginBtn.addEventListener("click", () => {
+        if  (loginBtn.textContent == "Logout") {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user_id');
+            localStorage.removeItem('access_lvl');
+            loginBtn.textContent = "Login";
+            window.location.assign('./home.html')
+        }else{
+            window.location.assign('./login.html')
+        }
+    })
     
 </script>

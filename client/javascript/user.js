@@ -1,14 +1,16 @@
+const user_id = localStorage.getItem('user_id');
 const loadUserInfo = async() => {
     try {
-        const response = await fetch("http://localhost:3000/users/");
+        
+        const response = await fetch(`http://localhost:3000/users/${user_id}`);
         const user = await response.json();
         if (response.status == 200) {
           const name = document.getElementById("name");
           const email = document.getElementById("email");
           const password = document.getElementById("password");
-          name.textContent = user["name"];
-          name.textContent = user["email"];
-          name.textContent = user["password"];
+          name.value = user["name"];
+          email.value = user["email"];
+          password.value = user["password"];
     
           
         } else {
@@ -38,12 +40,12 @@ document.getElementById("userInfo").addEventListener("submit", async (e) => {
         })
     }
 
-    const response = await fetch("http://localhost:3000/users/", options);
+    const response = await fetch(`http://localhost:3000/users/${user_id}`, options);
     const data = await response.json();
 
     if (response.status == 201) {
         alert("Updated!");
-        window.location.assign("login.html")
+        window.location.assign("user.html")
     } else {
         alert(data.error);
     }
