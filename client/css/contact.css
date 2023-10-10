@@ -1,0 +1,57 @@
+.container {
+    margin-top: 500px;
+    width: 500px;
+    margin: auto;
+    border-style: outset;
+    border-color: #ff4d6d;
+}
+
+h1 {
+    text-align: center;
+    padding-right: 225px;
+}
+
+/* Form css */
+.formBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+}
+
+
+fieldset {
+    font-size: larger;
+    margin-top: 10px;
+    border-style: none;
+    padding: 10px;
+    display: flex;
+}
+
+label {
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+}
+
+input {
+    font-size: large;
+}
+
+textarea {
+    font-size: large;
+    resize: vertical;
+    width: 228px;
+}
+
+input[type="submit"] {
+    margin-top: 10px;
+    margin-left: 40%;
+    margin-bottom: 10px;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -4,26 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/contact.css">
     <title>Contact</title>
 </head>
 <body>
     <script src="javascript/navAndFoot.js"></script>
-  <section id="nav">
-  </section>
-    <h1>Contact Us</h1>
-    <fieldset>
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email">
-    </fieldset>
-    <fieldset>
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title">
-    </fieldset>
-    <fieldset>
-        <label for="text">Query:</label>
-        <input type="text" id="query" name="query">
-    </fieldset>
-    <input type="submit" value="Submit">
+    <section id="nav"></section>
+    <div class="container">
+    <h1>Contact Us:</h1>
+    <div class="formBody">
+        <form action="" id="login">
+          <fieldset>
+              <label for="email">Email:</label>
+              <input type="text" id="email" name="email">
+          </fieldset>
+          <fieldset>
+              <label for="title">Title:</label>
+              <input type="text" id="title" name="title">
+          </fieldset>
+          <fieldset>
+              <label for="text">Query:</label>
+              <textarea type="text" id="query" name="query"> </textarea>
+          </fieldset>
+        <input type="submit" value="Submit">
+        </form>
+    </div>
+    </div>
+    </div>
 
     <iframe src="footer.html" frameborder="0" scrolling="no" width="100%" height="100"></iframe>
 </body>

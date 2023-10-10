@@ -1,0 +1,7 @@
+.container {
+    font-family: "Poppins", sans-serif;
+    width: 500px;
+    margin: auto;
+    border-style: outset;
+    border-color: #ff4d6d;
+}
