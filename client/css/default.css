@@ -14,16 +14,16 @@ body {
 .navBn {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    padding: 0.7rem 2rem;
+    justify-content: space-between;
+    padding: 0.2rem 1rem;
     font-family: "Poppins", sans-serif;
     font-weight: 700;
-    font-size: 10px;
+    font-size: 14px;
     text-align: center;
     text-decoration: none;
     color: #fff;
     backface-visibility: hidden;
-    border: 0.3rem solid transparent;
+    border: 0.2rem solid transparent;
     border-radius: 3rem;
 }
 
