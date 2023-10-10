@@ -24,7 +24,7 @@ const createBookElement = (data) => {
 }
 async function loadBooks () {
     try {
-      const response = await fetch("http://localhost:3000/");
+      const response = await fetch("http://localhost:3000/book");
       const books = await response.json();
       if (response.status == 200) {
         const container = document.getElementById("books");
@@ -68,3 +68,26 @@ async function loadBooks () {
           }
     });
 });
+
+const searchBtn = document.querySelector('#searchbookbtn');
+searchBtn.addEventListener('click', async(e)=>{
+  const searchTitle = document.querySelector('#searchbooktext');
+  const searchTitleEncoded = encodeURIComponent(searchTitle.value)
+  console.log(searchTitleEncoded)
+  try {
+  const response = await fetch(`http://localhost:3000/books/title/${searchTitleEncoded}`);
+    const posts = await response.json();
+    if (response.status == 200) {
+      const container = document.getElementById("posts");
+      container.innerHTML = "";
+      category.textContent = "";
+      posts.forEach(p => {
+        const elem = createPostElement(p);
+        container.appendChild(elem);
+      });
+    } else {
+    }
+  } catch (error) {
+    console.log(error);
+  }
+})

@@ -1,48 +1,49 @@
 <link rel="stylesheet" href="css/default.css">
-<head>
-<style>
-    nav {
-        background-color: #800f2f;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 5px;
-        overflow: hidden;
-    }
-    nav li {
-        float: left;
-        padding: 3px;
-        
-    }
-    nav li a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-    }
-    .title {
-        display: block;
-        color: white;
-        text-align: center;
-        font-family: "Poppins", sans-serif;
-        font-weight: 700;
-        font-size: 18px;
-        padding: 14px 16px;
-        text-decoration: none;
-        
-    }
-    nav li a:hover {
-        background-color: #ff4d6d;
-    }
 
-    
+<head>   
+    <style>
+        nav {
+            background-color: #800f2f;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 5px;
+            overflow: hidden;
+        }
+        nav li {
+            float: left;
+            padding: 3px;
+            
+        }
+        nav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .title {
+            display: block;
+            color: white;
+            text-align: center;
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            padding: 14px 16px;
+            text-decoration: none;
+            
+        }
+        nav li a:hover {
+            background-color: #ff4d6d;
+        }
 
-</style>
+        
+
+    </style>
 </head>
 <!-- old nav bar -->
 <nav>
@@ -61,7 +62,15 @@
             <a class="navBn" href="contact.html">Contact</a>
         </li>
         <li>
-            <a class="navBn" href="login.html">Login</a>
+            <a class="navBn" id="login-logout" href="login.html">Login</a>
         </li>
     </ul>
 </nav>
+<script>
+    const loginBtn = document.getElementById("login-logout");
+    if (localStorage.getItem("token") !== null) {
+        loginBtn.textContent = "Logout"
+    } else {
+        loginBtn.textContent = "Login"
+    }
+</script>

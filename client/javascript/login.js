@@ -10,7 +10,7 @@ document.getElementById("login").addEventListener("submit", async (e) => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            username: form.get("username"),
+            email: form.get("email"),
             password: form.get("password")
         })
     }
@@ -20,8 +20,9 @@ document.getElementById("login").addEventListener("submit", async (e) => {
 
     if (response.status == 200) {
         localStorage.setItem("token",data.token)
-        window.location.assign("main.html")
+        window.location.assign("home.html")
         alert("Logged in!");
+        
     } else {
         alert(data.error);
     }
