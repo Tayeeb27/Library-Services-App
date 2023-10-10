@@ -1,16 +1,24 @@
 .container {
     padding: 50px;
-    border-style: ridge;
-    border: 7px solid #ff4d6d;
+    border: 7px outset #ff4d6d;
     outline: 50px solid #fff0f3;
     font-family: "Poppins", sans-serif;
 }
 
+/* .personBorder {
+    margin: 20px;
+    border: 5px solid #ff4d6d;
+} */
+
 .person {
     padding: 50px;
-    margin: 0px;
-    border-style: ridge;
-    border: 7px solid #ff4d6d;
     outline: 10px;
-    font-family: "Poppins", sans-serif;
+}
+
+.img {
+    border: 5px outset #ff4d6d;
+}
+
+.belowImg {
+    border: 5px solid #ff4d6d;
 }
