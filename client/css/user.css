@@ -1,8 +1,16 @@
 .container {
+    margin-top: 500px;
     width: 500px;
+    padding-right: 50px;
     margin: auto;
     border-style: outset;
     border-color: #ff4d6d;
+}
+
+h1 {
+    text-align: center;
+    padding-right: 225px;
+    width: 60%;
 }
 
 /* Form css */
@@ -37,11 +45,11 @@ input {
 }
 
 
-#loginbutton {
+.changes {
     font-size: large;
 }
 
-#loginbutton {
+.changes {
     margin-top: 10px;
     margin-left: 40%;
     background-color: #c9184a;
