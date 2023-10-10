@@ -8,7 +8,9 @@
     <title>About</title>
 </head>
 <body>
-    <iframe src="navbar.html" frameborder="0" scrolling="no" width="100%" height="100"></iframe>
+  <script src="javascript/navAndFoot.js"></script>
+  <section id="nav">
+  </section>
     <div class="container-fluid py-4 d-flex justify-content-center">
         <div class="py-4 mb-4 bg-body-tertiary rounded-3 text-center"> 
           <div class="container">
@@ -85,3 +87,18 @@
     <iframe src="footer.html" frameborder="0" scrolling="no" width="100%" height="100"></iframe>
 </body>
 </html>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"
+></script>
+<script>
+  $(function(){
+    $("#nav").load("navbar.html");
+  });
+</script>
