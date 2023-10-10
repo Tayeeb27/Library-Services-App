@@ -89,6 +89,7 @@ searchBtn.addEventListener('click', async(e)=>{
       const container = document.getElementById("booksContainer");
       container.innerHTML = "";
       category.textContent = "";
+      searchTitle.value = "";
       const elem = createBookElement(books);
       container.appendChild(elem);
     } else {
