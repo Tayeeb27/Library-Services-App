@@ -10,8 +10,8 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            username: form.get("name"),
-            password: form.get("email"),
+            name: form.get("name"),
+            email: form.get("email"),
             password: form.get("password")
         })
     }

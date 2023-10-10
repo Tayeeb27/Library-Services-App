@@ -6,7 +6,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: 20px;        
     }
     nav ul {
         list-style-type: none;
@@ -41,9 +41,9 @@
         background-color: #ff4d6d;
     }
 
-    
+        
 
-</style>
+    </style>
 </head>
 <!-- old nav bar -->
 <nav>
@@ -62,7 +62,15 @@
             <a class="navBn" href="contact.html">Contact</a>
         </li>
         <li>
-            <a class="navBn" href="login.html">Login</a>
+            <a class="navBn" id="login-logout" href="login.html">Login</a>
         </li>
     </ul>
 </nav>
+<script>
+    const loginBtn = document.getElementById("login-logout");
+    if (localStorage.getItem("token") !== null) {
+        loginBtn.textContent = "Logout"
+    } else {
+        loginBtn.textContent = "Login"
+    }
+</script>
