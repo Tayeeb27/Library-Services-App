@@ -20,6 +20,7 @@ document.getElementById("login").addEventListener("submit", async (e) => {
 
     if (response.status == 200) {
         localStorage.setItem("token",data.token)
+        localStorage.setItem("access_lvl", data.access_lvl);
         window.location.assign("home.html")
         alert("Logged in!");
         

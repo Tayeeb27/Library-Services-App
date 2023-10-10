@@ -70,7 +70,8 @@
     const loginBtn = document.getElementById("login-logout");
     const userLink = document.createElement("li");
     const userAnchor = document.createElement("a");
-
+    const staffLink = document.createElement("li");
+    const staffAnchor = document.createElement("a");
     if (localStorage.getItem("token") !== null) {
         loginBtn.textContent = "Logout";
 
@@ -83,7 +84,18 @@
         // Insert the User link before the Login link
         const loginLi = loginBtn.parentElement;
         loginLi.parentNode.insertBefore(userLink, loginLi);
+        const userLi = userAnchor.parentElement;
+        if (localStorage.getItem("access_lvl") === 1) {
+            // Create the User link
+            staffAnchor.textContent = "Staff";
+            staffAnchor.className = "navBn";
+            staffAnchor.href = "staff.html";
+            staffLink.appendChild(staffAnchor);
+            const loginLi = loginBtn.parentElement;
+            loginLi.parentNode.insertBefore(staffLink, userLi);
+        }
     } else {
         loginBtn.textContent = "Login";
     }
+    
 </script>
