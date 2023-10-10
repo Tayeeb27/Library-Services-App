@@ -1,8 +1,8 @@
-document.getElementById("register-form").addEventListener("submit", async (e) => {
+document.getElementById("register").addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const form = new FormData(e.target);
-
+    console.log(form)
     const options = {
         method: "POST",
         headers: {
