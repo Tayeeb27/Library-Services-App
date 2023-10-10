@@ -18,11 +18,14 @@ class Orders {
     }
 
     static async getById (id) {
-        const response = await db.query("SELECT * FROM orders WHERE order_id = $1;", [id])
+        const response = await db.query("SELECT * FROM orders WHERE user_id = $1;", [id])
         if (response.rows.length === 0) {
             throw new Error("No Orders Found")
+        }else if(response.rows.length === 0){
+            return new Orders(response.rows[0])
+        }else{
+        return response.rows.map(order => new Orders(order))
         }
-        return new Orders(response.rows[0])
     }
 
     static async createOrder(data){

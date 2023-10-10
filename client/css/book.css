@@ -40,3 +40,12 @@ input[type='submit'][value="Confirm Reservation"] {
     text-decoration: none;
     cursor: pointer;
 }
+.selected-book {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px; /* Add some spacing between selected books */
+}
+
+.selected-book p {
+    margin-right: 10px; /* Add spacing between title and author */
+}
