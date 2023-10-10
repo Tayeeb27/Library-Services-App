@@ -77,7 +77,7 @@ const updateUser = async (req, res) => {
       // Hash the password
       data["password"] = await bcrypt.hash(data["password"], salt);
 
-      const result = await User.create(data);
+      const result = await Users.register(data);
 
       res.status(201).send(result);
   } catch (err) {
@@ -87,14 +87,14 @@ const updateUser = async (req, res) => {
   async function login (req, res) {
     const data = req.body;
     try {
-        const user = await User.getOneByUsername(data.username);
+        const user = await Users.getOneByEmail(data.email);
         console.log("User", user)
         const authenticated = await bcrypt.compare(data.password, user["password"]);
-        console.log("Authentificated", authenticated)
+        console.log("Authenticated", authenticated)
         if (!authenticated) {
             throw new Error("Incorrect credentials.");
         } else {
-            const token = await Token.create(user.id);
+            const token = await Token.create(user.user_id);
             res.status(200).json({ authenticated: true, token: token.token });
         }
         

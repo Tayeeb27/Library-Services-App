@@ -25,7 +25,14 @@ class Users {
         }
         return new Users(response.rows[0])
     }
-    static async createUser(data){
+    static async getOneByEmail (email) {
+        const response = await db.query("SELECT * FROM users WHERE email = $1;", [email])
+        if (response.rows.length === 0) {
+            throw new Error("No User Found")
+        }
+        return new Users(response.rows[0])
+    }
+    static async register(data){
         const {name, email, password} = data;
         const response = await db.query('INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING *;', [name, email, password])
         return new Users(response.rows[0])
