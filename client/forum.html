@@ -19,16 +19,26 @@
     <div id="book-club-content" class="tab-content">
         <h2>Welcome to the Book Club</h2>
         <p>Discuss your favorite books and authors here.</p>
+        <form id="BPForm">
+        <label for="titleB">Title:</label>
+        <input type="text" id="titleB" placeholder="Title" required>
         <label for="textBC">Discussion</label>
-        <textarea type="text" id="textBC"></textarea>
+        <textarea type="text" id="contentB"></textarea>
         <input type="submit" value="Submit">
-        <div id="book-posts" class="tab-content"></div>    
+      </form>
+        <div id="book-posts" class="container"></div>    
     </div>
     <div id="communities-content" class="tab-content">
         <h2>Welcome to the Communities</h2>
         <p>Connect with different communities and share your interests.</p>
-        <label for="textCommunity">Post</label>
-        <textarea type="text" id="textCommunity"></textarea> 
+        <form id="CPForm">
+          <label for="titleC">Title:</label>
+        <input type="text" id="titleC" placeholder="Title" required>
+        <label for="contentC">Post</label>
+        <textarea type="text" id="contentC"></textarea>
+        <input type="submit" value="Submit"> 
+      </form>
+        <div id="community-posts" class="container"></div>  
     </div>
     
     <iframe src="footer.html" frameborder="0" scrolling="no" width="100%" height="100"></iframe>
