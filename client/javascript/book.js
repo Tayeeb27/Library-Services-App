@@ -1,29 +1,41 @@
 const createBookElement = (data) => {
     const book = document.createElement('div');
     book.className = 'book';
+    const titleContainer = document.createElement('div');
+    // Title Container
+    titleContainer.className = 'titleContainer';
+    book.appendChild(titleContainer)
     const title = document.createElement('h2');
     title.textContent = data['title'];
     book.appendChild(title);
-    const author = document.createElement('p');
-    author.textContent = data['author'];
-    book.appendChild(author);
-    const description = document.createElement('p');
-    description.textContent = data['description'];
-    book.appendChild(description);
-    const category = document.createElement('p');
-    category.textContent = data['category'];
-    book.appendChild(category);
-    const rating = document.createElement('p');
-    rating.textContent = data['rating'];
-    book.appendChild(rating);
-    const releaseYear = document.createElement('p');
-    const date = new Date(data['release_year']);
-    const formattedDate = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
-    releaseYear.textContent = formattedDate;
-    book.appendChild(releaseYear);
+     // Information Container
+    const infoContainer = document.createElement('div')
+    infoContainer.className = 'infoContainer'
+    book.appendChild(infoContainer)
+
+    // Information
+    const imgParagraph = document.createElement('p');
     const img = document.createElement('img');
-    img.src = data['image_url']
-    book.appendChild(img);
+    img.src = data['image_url'];
+    imgParagraph.appendChild(img);
+    infoContainer.appendChild(imgParagraph);
+    const author = document.createElement('p');
+    author.innerHTML = `<b>Author:</b> ${data['author']}`;
+    imgParagraph.appendChild(author);
+    const description = document.createElement('p');
+    description.innerHTML = `<b>Description:</b> ${data['description']}`;
+    imgParagraph.appendChild(description);
+    const category = document.createElement('p');
+    category.innerHTML = `<b>Category:</b> ${data['category']}`;
+    imgParagraph.appendChild(category);
+    const rating = document.createElement('p');
+    rating.innerHTML = `<b>Rating:</b> ${data['rating']}`;
+    imgParagraph.appendChild(rating);
+    const releaseYear = document.createElement('p');
+    year = data['release_year'].slice(0, 4)
+    releaseYear.innerHTML = `<b>Release Year:</b> ${year}`;
+    imgParagraph.appendChild(releaseYear);
+
     const reserveBtn = document.createElement('button');
     localStorage.setItem('book_id', data['book_id']);
     reserveBtn.textContent = 'Reserve'
@@ -33,61 +45,61 @@ const createBookElement = (data) => {
     });
     return book;
 }
-async function loadBooks () {
+async function loadBooks() {
+  try {
+    const response = await fetch("http://localhost:3000/books");
+    const books = await response.json();
+    if (response.status == 200) {
+      const container = document.getElementById("booksContainer");
+
+      books.forEach(b => {
+        const elem = createBookElement(b);
+        container.appendChild(elem);
+      });
+    } else {
+      //window.location.assign("./index.html");
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+loadBooks()
+
+const category = document.querySelectorAll('.nav-link');
+let categoryName = null;
+category.forEach(function (link) {
+  link.addEventListener("click", async (e) => {
+    // Store the clicked link in the variable
+
+    // You can perform other actions here based on the clicked link if needed
+    console.log("Clicked link text: " + link.textContent);
     try {
-      const response = await fetch("http://localhost:3000/books");
+      const response = await fetch(`http://localhost:3000/books/category/${link.textContent}`);
       const books = await response.json();
       if (response.status == 200) {
         const container = document.getElementById("booksContainer");
-  
+        container.innerHTML = "";
+        category.textContent = "";
         books.forEach(b => {
           const elem = createBookElement(b);
           container.appendChild(elem);
         });
       } else {
-        //window.location.assign("./index.html");
       }
     } catch (error) {
       console.log(error);
     }
-  }
-  loadBooks()
-
-  const category = document.querySelectorAll('.nav-link');
-  let categoryName = null;
-  category.forEach(function (link) {
-    link.addEventListener("click", async(e) => {
-        // Store the clicked link in the variable
-        
-        // You can perform other actions here based on the clicked link if needed
-        console.log("Clicked link text: " + link.textContent);
-        try {
-          const response = await fetch(`http://localhost:3000/books/category/${link.textContent}`);
-            const books = await response.json();
-            if (response.status == 200) {
-              const container = document.getElementById("booksContainer");
-              container.innerHTML = "";
-              category.textContent = "";
-              books.forEach(b => {
-                const elem = createBookElement(b);
-                container.appendChild(elem);
-              });
-            } else {
-            }
-          } catch (error) {
-            console.log(error);
-          }
-    });
+  });
 });
 
 const searchBtn = document.getElementById('searchbookbtn');
-searchBtn.addEventListener('click', async(e)=>{
-  
+searchBtn.addEventListener('click', async (e) => {
+
   const searchTitle = document.getElementById('searchbooktext');
   const searchTitleEncoded = encodeURIComponent(searchTitle.value)
   console.log(searchTitleEncoded)
   try {
-  const response = await fetch(`http://localhost:3000/books/title/${searchTitleEncoded}`);
+    const response = await fetch(`http://localhost:3000/books/title/${searchTitleEncoded}`);
     const books = await response.json();
     if (response.status == 200) {
       const container = document.getElementById("booksContainer");
@@ -102,23 +114,23 @@ searchBtn.addEventListener('click', async(e)=>{
     console.log(error);
   }
 })
-const addToBasket = (id,title, author) => {
+const addToBasket = (id, title, author) => {
   const basket = document.querySelector('.basket');
-  
+
   // Create a container for the selected book
   const selectedBook = document.createElement('div');
   selectedBook.className = 'selected-book';
-  
+
   // Create elements to display the title and author
   const titleElement = document.createElement('p');
   titleElement.textContent = `Title: ${title}`;
   const authorElement = document.createElement('p');
   authorElement.textContent = `Author: ${author}`;
-  
+
   // Append title and author elements to the selected book container
   selectedBook.appendChild(titleElement);
   selectedBook.appendChild(authorElement);
-  
+
   // Append the selected book container to the basket
   basket.appendChild(selectedBook);
   basket.value = id;
@@ -126,33 +138,33 @@ const addToBasket = (id,title, author) => {
 
 document.getElementById("orderBtn").addEventListener("click", async (e) => {
   e.preventDefault();
-  const dateD =document.getElementById('datePicker')
+  const dateD = document.getElementById('datePicker')
   const order_reference = document.getElementById('orderRef')
   const date = new Date(dateD.value);
   const formattedDate = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
   console.log(formattedDate);
   const options = {
-      method: "POST",
-      headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-          user_id:localStorage.getItem('user_id'),
-          book_id: localStorage.getItem('book_id'),
-          collection_date: formattedDate,
-          order_reference: order_reference.value
-      })
+    method: "POST",
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      user_id: localStorage.getItem('user_id'),
+      book_id: localStorage.getItem('book_id'),
+      collection_date: formattedDate,
+      order_reference: order_reference.value
+    })
   }
 
   const response = await fetch("http://localhost:3000/orders/", options);
   const data = await response.json();
 
   if (response.status == 201) {
-      alert("Order Completed!");
-      window.location.assign("orders.html")
-      localStorage.removeItem('book_id');
+    alert("Order Completed!");
+    window.location.assign("orders.html")
+    localStorage.removeItem('book_id');
   } else {
-      alert(data.error);
+    alert(data.error);
   }
 })
