@@ -42,8 +42,10 @@ class Books {
         }
         return response.rows.map(bc => new Books(bc))
     }
-        
-
+     
+    //create
+//update 
+//delete
 }
 
 module.exports = Books
