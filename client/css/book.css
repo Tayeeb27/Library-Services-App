@@ -40,3 +40,40 @@ input[type='submit'][value="Confirm Reservation"] {
     text-decoration: none;
     cursor: pointer;
 }
+
+.books {
+    /*border-style: dashed; */
+}
+
+#book {
+    border-style: dashed;
+    margin: 5px;
+}
+
+#bookTitle {
+    /* border-style: dashed; */
+}
+
+#bookAuthor {
+    /* border-style: dashed; */
+}
+
+#bookDescription {
+    /* border-style: dashed; */
+}
+
+#bookCategory {
+    /* border-style: dashed; */
+}
+
+#bookReleaseYear {
+    /* border-style: dashed; */
+}
+
+#bookImg {
+    /* border-style: dashed; */
+}
+
+#reserveBtn {
+    /* border-style: dashed; */
+}
