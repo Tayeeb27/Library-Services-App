@@ -44,6 +44,27 @@ class Books {
     }
         
 
+    //create
+    static async createBook(data){
+        const {title, author, description, category, rating, release_year, image_url} = data;
+        const response = await db.query('INSERT INTO books (title, author, description, category, rating, release_year, image_url) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *;', [title, author, description, category, rating, release_year, image_url])
+        return new Books(response.rows[0])
+    }
+
+    //update
+    static async updateBook(id, data){
+        const {description, category, rating, image_url}= data;
+        const response = await db.query('UPDATE books SET  description = $1, category = $2, rating = $3, image_url = $4 WHERE book_id = $5 RETURNING *;', [description, category, rating, image_url, id])
+        return new Books(response.rows[0])
+    }
+    //delete
+    static async deleteBook(id){
+        const response = await db.query('DELETE FROM books WHERE book_id = $1 RETURNING *;', [id]);
+        if (response.rows.length === 0) {
+            throw new Error("Unable to delete book.");
+        }
+        return new Books(response.rows[0])
+    }
 }
 
 module.exports = Books
