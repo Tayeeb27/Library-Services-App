@@ -41,52 +41,59 @@ input[type='submit'][value="Confirm Reservation"] {
     cursor: pointer;
 }
 
-.selected-book {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 10px;
-    /* Add some spacing between selected books */
-}
-
-.selected-book p {
-    margin-right: 10px;
-    /* Add spacing between title and author */
-}
-
-
 .books {
-    /*border-style: dashed; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-#book {
-    border-style: dashed;
+.book {
+    background-color: white;
+    border-style: outset;
+    border-width: 10px;
+    border-color: #ff4d7d;
+    background-color: #ff4d6d;
+    margin-bottom: 20px;
+    width: 70%;
+}
+
+.titleContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.titleContainer title {
+    font-family: "Poppins", sans-serif;
+}
+
+.infoContainer {
+    background-color: #ff8fa3;
+    max-width: 100%;
+    overflow: hidden;
+
+}
+
+.infoContainer p {
+    padding: 0.5%;
+}
+
+
+.infoContainer img {
+    max-width: 20%;
+    border-radius: 10%;
+    float: left;
     margin: 5px;
 }
 
-#bookTitle {
-    /* border-style: dashed; */
-}
-
-#bookAuthor {
-    /* border-style: dashed; */
-}
-
-#bookDescription {
-    /* border-style: dashed; */
-}
-
-#bookCategory {
-    /* border-style: dashed; */
-}
-
-#bookReleaseYear {
-    /* border-style: dashed; */
-}
-
-#bookImg {
-    /* border-style: dashed; */
-}
-
-#reserveBtn {
-    /* border-style: dashed; */
+.book button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 6.5%;
+    background-color: #c9184a;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    cursor: pointer;
 }

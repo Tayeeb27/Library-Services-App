@@ -1,27 +1,44 @@
 const createBookElement = (data) => {
+  console.log(data)
+  // Overall Container
   const book = document.createElement('div');
   book.className = 'book';
+  const titleContainer = document.createElement('div');
+  // Title Container
+  titleContainer.className = 'titleContainer';
+  book.appendChild(titleContainer)
   const title = document.createElement('h2');
   title.textContent = data['title'];
-  book.appendChild(title);
-  const author = document.createElement('p');
-  author.textContent = data['author'];
-  book.appendChild(author);
-  const description = document.createElement('p');
-  description.textContent = data['description'];
-  book.appendChild(description);
-  const category = document.createElement('p');
-  category.textContent = data['category'];
-  book.appendChild(category);
-  const rating = document.createElement('p');
-  rating.textContent = data['rating'];
-  book.appendChild(rating);
-  const releaseYear = document.createElement('p');
-  releaseYear.textContent = data['releaseYear'];
-  book.appendChild(releaseYear);
+  titleContainer.appendChild(title);
+
+  // Information Container
+  const infoContainer = document.createElement('div')
+  infoContainer.className = 'infoContainer'
+  book.appendChild(infoContainer)
+
+  // Information
+  const imgParagraph = document.createElement('p');
   const img = document.createElement('img');
-  img.src = data['image_url']
-  book.appendChild(img);
+  img.src = data['image_url'];
+  imgParagraph.appendChild(img);
+  infoContainer.appendChild(imgParagraph);
+  const author = document.createElement('p');
+  author.innerHTML = `<b>Author:</b> ${data['author']}`;
+  imgParagraph.appendChild(author);
+  const description = document.createElement('p');
+  description.innerHTML = `<b>Description:</b> ${data['description']}`;
+  imgParagraph.appendChild(description);
+  const category = document.createElement('p');
+  category.innerHTML = `<b>Category:</b> ${data['category']}`;
+  imgParagraph.appendChild(category);
+  const rating = document.createElement('p');
+  rating.innerHTML = `<b>Rating:</b> ${data['rating']}`;
+  imgParagraph.appendChild(rating);
+  const releaseYear = document.createElement('p');
+  year = data['release_year'].slice(0, 4)
+  releaseYear.innerHTML = `<b>Release Year:</b> ${year}`;
+  imgParagraph.appendChild(releaseYear);
+
   const reserveBtn = document.createElement('button');
   localStorage.setItem('book_id', data['book_id']);
   reserveBtn.textContent = 'Reserve'
