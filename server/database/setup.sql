@@ -4,6 +4,8 @@ DROP TABLE IF EXISTS orders;
 DROP TABLE IF EXISTS token;
 DROP TABLE IF EXISTS books;
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS community_posts;
+DROP TABLE IF EXISTS book_posts;
 
 
 CREATE TABLE books (
@@ -73,4 +75,21 @@ CREATE TABLE token (
     token CHAR(36) UNIQUE NOT NULL,
     PRIMARY KEY (token_id),
     FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
+CREATE TABLE community_posts (
+    community_post_id INT GENERATED ALWAYS AS IDENTITY,
+    title VARCHAR (100) NOT NULL,
+    content VARCHAR (500) NOT NULL,
+    date DATE DEFAULT CURRENT_DATE,
+    time TIME DEFAULT CURRENT_TIME,
+    PRIMARY KEY (post_id)
+);
+CREATE TABLE book_posts (
+    book_post_id INT GENERATED ALWAYS AS IDENTITY,
+    title VARCHAR (100) NOT NULL,
+    content VARCHAR (500) NOT NULL,
+    date DATE DEFAULT CURRENT_DATE,
+    time TIME DEFAULT CURRENT_TIME,
+    PRIMARY KEY (post_id)
 );
