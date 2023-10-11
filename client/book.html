@@ -13,49 +13,44 @@
   <script src="javascript/navAndFoot.js"></script>
   <section id="nav">
   </section>
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container">
-          <a class="navbar-brand">
-            Book Categories
-          </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" value="Kids" href="#">Kids</a>
-            </li>
-            <li class="nav-item">
-              <a class ="nav-link" value="Teen" href="#">Teen</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" value="Adult" href="#">Adult</a>
-            </li>
-            <li class="nav-item">
-              <a class ="nav-link" value="Fiction" href="#">Fiction</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" value="Horror" href="#">Horror</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+
       <div class="searchBook">
       <input class = "searchTitle" type="text" id="searchbooktext" placeholder="Title">
       <input class ="searchTitle" type="submit" value="Search"id="searchbookbtn">
+      <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+          <a class="dropNav" href="#">Fantasy</a>
+          <a class="dropNav" href="#">Fiction</a>
+          <a class="dropNav" href="#">Foreign</a>
+          <a class="dropNav" href="#">Horror</a>
+          <a class="dropNav" href="#">Novel</a>
+        </div>
       </div>
+      </div>
+      <div class="center">
       <div class="books" id ="booksContainer">
             
       </div>
-      <div class="basket">
-        
       </div>
-      <label for="date">Collection Date:</label>
-      <input type="date" id="datePicker">
-      <label for="date">Order Reference:</label>
-      <input type="text" id="orderRef">
-      <input type="submit" value="Confirm Reservation" id ="orderBtn">
+
+      <div class="checkOut">
+        <form>
+        <label for="date">Collection Date: </label>
+        <input type="date" id="datePicker">
+        <label for="date">Order Reference: </label>
+        <input type="text" id="orderRef">
+        <input type="submit" value="Confirm Reservation" id ="orderBtn">
+        </form>
+      </div>
+
+      <div class="basketAll">
+        <h2>Reserved Book</h2>
+        <div class="basket">
+
+        </div>
+      </div>
+
     <iframe src="footer.html" frameborder="0" scrolling="no" width="100%" height="100"></iframe>
     
 </body>

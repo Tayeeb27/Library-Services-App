@@ -1,49 +1,49 @@
 const createBookElement = (data) => {
-    const book = document.createElement('div');
-    book.className = 'book';
-    const titleContainer = document.createElement('div');
-    // Title Container
-    titleContainer.className = 'titleContainer';
-    book.appendChild(titleContainer)
-    const title = document.createElement('h2');
-    title.textContent = data['title'];
-    book.appendChild(title);
-     // Information Container
-    const infoContainer = document.createElement('div')
-    infoContainer.className = 'infoContainer'
-    book.appendChild(infoContainer)
+  const book = document.createElement('div');
+  book.className = 'book';
+  const titleContainer = document.createElement('div');
+  // Title Container
+  titleContainer.className = 'titleContainer';
+  book.appendChild(titleContainer)
+  const title = document.createElement('h2');
+  title.textContent = data['title'];
+  titleContainer.appendChild(title);
+  // Information Container
+  const infoContainer = document.createElement('div')
+  infoContainer.className = 'infoContainer'
+  book.appendChild(infoContainer)
 
-    // Information
-    const imgParagraph = document.createElement('p');
-    const img = document.createElement('img');
-    img.src = data['image_url'];
-    imgParagraph.appendChild(img);
-    infoContainer.appendChild(imgParagraph);
-    const author = document.createElement('p');
-    author.innerHTML = `<b>Author:</b> ${data['author']}`;
-    imgParagraph.appendChild(author);
-    const description = document.createElement('p');
-    description.innerHTML = `<b>Description:</b> ${data['description']}`;
-    imgParagraph.appendChild(description);
-    const category = document.createElement('p');
-    category.innerHTML = `<b>Category:</b> ${data['category']}`;
-    imgParagraph.appendChild(category);
-    const rating = document.createElement('p');
-    rating.innerHTML = `<b>Rating:</b> ${data['rating']}`;
-    imgParagraph.appendChild(rating);
-    const releaseYear = document.createElement('p');
-    year = data['release_year'].slice(0, 4)
-    releaseYear.innerHTML = `<b>Release Year:</b> ${year}`;
-    imgParagraph.appendChild(releaseYear);
+  // Information
+  const imgParagraph = document.createElement('p');
+  const img = document.createElement('img');
+  img.src = data['image_url'];
+  imgParagraph.appendChild(img);
+  infoContainer.appendChild(imgParagraph);
+  const author = document.createElement('p');
+  author.innerHTML = `<b>Author:</b> ${data['author']}`;
+  imgParagraph.appendChild(author);
+  const description = document.createElement('p');
+  description.innerHTML = `<b>Description:</b> ${data['description']}`;
+  imgParagraph.appendChild(description);
+  const category = document.createElement('p');
+  category.innerHTML = `<b>Category:</b> ${data['category']}`;
+  imgParagraph.appendChild(category);
+  const rating = document.createElement('p');
+  rating.innerHTML = `<b>Rating:</b> ${data['rating']}`;
+  imgParagraph.appendChild(rating);
+  const releaseYear = document.createElement('p');
+  year = data['release_year'].slice(0, 4)
+  releaseYear.innerHTML = `<b>Release Year:</b> ${year}`;
+  imgParagraph.appendChild(releaseYear);
 
-    const reserveBtn = document.createElement('button');
-    localStorage.setItem('book_id', data['book_id']);
-    reserveBtn.textContent = 'Reserve'
-    book.appendChild(reserveBtn);
-    reserveBtn.addEventListener('click', () =>{
-      addToBasket(data["id"],data['title'], data['author']);
-    });
-    return book;
+  const reserveBtn = document.createElement('button');
+  localStorage.setItem('book_id', data['book_id']);
+  reserveBtn.textContent = 'Reserve'
+  infoContainer.appendChild(reserveBtn);
+  reserveBtn.addEventListener('click', () => {
+    addToBasket(data["id"], data['title'], data['author']);
+  });
+  return book;
 }
 async function loadBooks() {
   try {
@@ -65,7 +65,7 @@ async function loadBooks() {
 }
 loadBooks()
 
-const category = document.querySelectorAll('.nav-link');
+const category = document.querySelectorAll('.dropNav');
 let categoryName = null;
 category.forEach(function (link) {
   link.addEventListener("click", async (e) => {
@@ -114,6 +114,7 @@ searchBtn.addEventListener('click', async (e) => {
     console.log(error);
   }
 })
+let bookCount = 0;
 const addToBasket = (id, title, author) => {
   const basket = document.querySelector('.basket');
 
@@ -123,16 +124,30 @@ const addToBasket = (id, title, author) => {
 
   // Create elements to display the title and author
   const titleElement = document.createElement('p');
-  titleElement.textContent = `Title: ${title}`;
+  titleElement.innerHTML = `<b>Title:</b> ${title}`;
   const authorElement = document.createElement('p');
-  authorElement.textContent = `Author: ${author}`;
+  authorElement.innerHTML = `<b>Author:</b> ${author}`;
 
   // Append title and author elements to the selected book container
   selectedBook.appendChild(titleElement);
   selectedBook.appendChild(authorElement);
-
+  if (bookCount >= 1) {
+    return alert('You can only add 1 books to your reservations')
+  }
   // Append the selected book container to the basket
   basket.appendChild(selectedBook);
+
+  const removeBtn = document.createElement('button');
+  removeBtn.textContent = 'Remove'
+  basket.appendChild(removeBtn);
+
+  removeBtn.addEventListener('click', () => {
+    basket.removeChild(selectedBook);
+    basket.removeChild(removeBtn);
+    bookCount--
+  });
+
+  bookCount++
   basket.value = id;
 }
 
