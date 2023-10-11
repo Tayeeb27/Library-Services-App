@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const cpController = require('../controllers/cp')
+const cpController = require('../controller/community_posts')
 
 const cpRouter = Router();
 

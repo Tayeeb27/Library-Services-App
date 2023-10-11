@@ -1,4 +1,4 @@
-const db = require('../db/connect');
+const db = require('../database/connect');
 
 class Book_Posts {
     constructor({book_post_id, title, content, date, time}) {

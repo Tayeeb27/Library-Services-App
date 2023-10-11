@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const bpController = require('../controllers/bp')
+const bpController = require('../controller/book_posts')
 
 const bpRouter = Router();
 

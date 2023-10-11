@@ -1,4 +1,4 @@
-const db = require('../db/connect');
+const db = require('../database/connect');
 
 class Community_Posts {
     constructor({community_post_id, title, content, date, time}) {

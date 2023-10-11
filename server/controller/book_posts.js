@@ -30,15 +30,15 @@ async function showDate (req, res) {
     }
 }
 
-// async function create (req, res) {
-//     try {
-//         const data = req.body;
-//         const newBook_Posts = await Book_Posts.create(data);
-//         res.status(201).json(newBook_Posts);
-//     } catch(err) {
-//         res.status(400).json({error: err.message});
-//     }
-// }
+async function create (req, res) {
+    try {
+        const data = req.body;
+        const newBook_Posts = await Book_Posts.create(data);
+        res.status(201).json(newBook_Posts);
+    } catch(err) {
+        res.status(400).json({error: err.message});
+    }
+}
 
 async function update (req, res) {
     try {
@@ -63,4 +63,4 @@ async function destroy (req, res) {
     }
 };
 
-module.exports = { index, showID, showDate, showCategory, create, update, destroy }
+module.exports = { index, showID, showDate, create, update, destroy }
