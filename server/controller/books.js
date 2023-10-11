@@ -18,6 +18,15 @@ const bookName = async (req, res) => {
         res.status(404).json({error: err.message})
     }
 }
+const show = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const book = await Books.getOneByID(id);
+        res.status(200).json(book)
+    } catch (err) {
+        res.status(404).json({error: err.message})
+    }
+}
 
 
 const bookCategory = async (req, res) => {
@@ -36,4 +45,4 @@ const bookCategory = async (req, res) => {
 
 
 
-module.exports = { index, bookName, bookCategory }
+module.exports = { index, bookName, show, bookCategory }

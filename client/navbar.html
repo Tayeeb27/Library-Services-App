@@ -45,8 +45,6 @@
         background-color: #ff4d6d;
     }
 
-        
-
     </style>
 </head>
 <!-- old nav bar -->
@@ -66,40 +64,63 @@
             <a class="navBn" href="contact.html">Contact</a>
         </li>
         <li>
-            <a class="navBn" id="login-logout" href="login.html">Login</a>
+            <a class="navBn" id="login-logout" href="#">Login</a>
         </li>
     </ul>
 </nav>
 <script>
     const loginBtn = document.getElementById("login-logout");
-    const userLink = document.createElement("li");
-    const userAnchor = document.createElement("a");
-    const staffLink = document.createElement("li");
-    const staffAnchor = document.createElement("a");
+
     if (localStorage.getItem("token") !== null) {
         loginBtn.textContent = "Logout";
 
         // Create the User link
+        const userLink = document.createElement("li");
+        const userAnchor = document.createElement("a");
         userAnchor.textContent = "User";
         userAnchor.className = "navBn";
         userAnchor.href = "user.html";
         userLink.appendChild(userAnchor);
-        
-        // Insert the User link before the Login link
-        const loginLi = loginBtn.parentElement;
-        loginLi.parentNode.insertBefore(userLink, loginLi);
-        const userLi = userAnchor.parentElement;
-        if (localStorage.getItem("access_lvl") === 1) {
-            // Create the User link
+
+        // Create the Orders link
+        const orderLink = document.createElement("li");
+        const orderAnchor = document.createElement("a");
+        orderAnchor.textContent = "Orders";
+        orderAnchor.className = "navBn";
+        orderAnchor.href = "order.html";
+        orderLink.appendChild(orderAnchor);
+
+        // Create the Staff link (if applicable)
+        if (localStorage.getItem("access_lvl") === "1") {
+            const staffLink = document.createElement("li");
+            const staffAnchor = document.createElement("a");
             staffAnchor.textContent = "Staff";
             staffAnchor.className = "navBn";
             staffAnchor.href = "staff.html";
             staffLink.appendChild(staffAnchor);
-            const loginLi = loginBtn.parentElement;
-            loginLi.parentNode.insertBefore(staffLink, userLi);
+            
+            // Insert the Staff link before the Logout link
+            const logoutLi = loginBtn.parentElement;
+            logoutLi.parentNode.insertBefore(staffLink, logoutLi);
         }
+
+        // Insert the Orders and User links before the Logout link
+        const logoutLi = loginBtn.parentElement;
+        logoutLi.parentNode.insertBefore(orderLink, logoutLi);
+        logoutLi.parentNode.insertBefore(userLink, logoutLi);
     } else {
         loginBtn.textContent = "Login";
     }
-    
+
+    loginBtn.addEventListener("click", () => {
+        if (loginBtn.textContent === "Logout") {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user_id');
+            localStorage.removeItem('access_lvl');
+            loginBtn.textContent = "Login";
+            window.location.assign('./home.html');
+        } else {
+            window.location.assign('./login.html');
+        }
+    });
 </script>

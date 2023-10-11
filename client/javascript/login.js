@@ -17,10 +17,11 @@ document.getElementById("login").addEventListener("submit", async (e) => {
 
     const response = await fetch("http://localhost:3000/users/login", options);
     const data = await response.json();
-
+    console.log(data);
     if (response.status == 200) {
         localStorage.setItem("token",data.token)
         localStorage.setItem("access_lvl", data.access_lvl);
+        localStorage.setItem("user_id", data.user_id);
         window.location.assign("home.html")
         alert("Logged in!");
         

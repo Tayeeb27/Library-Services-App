@@ -41,6 +41,19 @@ input[type='submit'][value="Confirm Reservation"] {
     cursor: pointer;
 }
 
+.selected-book {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    /* Add some spacing between selected books */
+}
+
+.selected-book p {
+    margin-right: 10px;
+    /* Add spacing between title and author */
+}
+
+
 .books {
     /*border-style: dashed; */
 }

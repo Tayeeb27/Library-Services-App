@@ -27,6 +27,13 @@ class Books {
         }
         return new Books(response.rows[0])
     }
+    static async getOneByID(id) {
+        const response = await db.query("SELECT * FROM books WHERE book_id = $1;", [id])
+        if (response.rows.length != 1) {
+            throw new Error("unable to find that book")
+        }
+        return new Books(response.rows[0])
+    }
 
     static async getBookByCategory(category) {
         const response = await db.query("SELECT * FROM books WHERE LOWER(category) = $1;", [category]);

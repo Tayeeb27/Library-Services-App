@@ -95,7 +95,7 @@ const updateUser = async (req, res) => {
             throw new Error("Incorrect credentials.");
         } else {
             const token = await Token.create(user.user_id);
-            res.status(200).json({ authenticated: true, token: token.token });
+            res.status(200).json({ authenticated: true, token: token.token, user_id: user.user_id, access_lvl: user.access_lvl});
         }
         
     } catch (err) {
