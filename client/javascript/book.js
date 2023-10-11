@@ -17,7 +17,9 @@ const createBookElement = (data) => {
     rating.textContent = data['rating'];
     book.appendChild(rating);
     const releaseYear = document.createElement('p');
-    releaseYear.textContent = data['releaseYear'];
+    const date = new Date(data['release_year']);
+    const formattedDate = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
+    releaseYear.textContent = formattedDate;
     book.appendChild(releaseYear);
     const img = document.createElement('img');
     img.src = data['image_url']
