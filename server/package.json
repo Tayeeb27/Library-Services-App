@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "nodemon -L index.js",
     "setup-db": "node ./database/setup.js",
-    "test": "jest __test__/controllers/books.test.js --watchAll"
+    "test": "jest --watchAll --detectOpenHandles --runInBand --verbose --coverage",
+    "unitTests": "jest --testPathPattern=/unit/ --watchAll --verbose",
+    "integrationTests": "jest --testPathPattern=/integration/ --watchAll --detectOpenHandles --runInBand --verbose",
+    "coverage": "jest --coverage --testPathPattern=/unit/"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +20,7 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "logger": "^0.0.1",
+    "morgan": "^1.10.0",
     "pg": "^8.11.3",
     "uuid": "^9.0.1"
   },
