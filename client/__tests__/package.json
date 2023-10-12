@@ -23,6 +23,7 @@
   },
   "jest": {
     "testPathIgnorePatterns": [
+      "./coverage/",
       "/__tests__/helpers.js"
     ]
   }
