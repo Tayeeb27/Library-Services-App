@@ -1,9 +1,4 @@
-body {
-    font-family: "Poppins", sans-serif;
-}
-
 .container {
-    font-family: "Poppins", sans-serif;
     width: 100%;
     margin: auto;
     border-style: outset;
@@ -117,10 +112,6 @@ body {
 .titleContainer {
     display: flex;
     flex-direction: column;
-}
-
-.titleContainer h2 {
-    font-family: "Poppins", sans-serif;
 }
 
 .infoContainer {
