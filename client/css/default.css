@@ -48,8 +48,10 @@ p {
 }
 
 input {
+    border-width: 3px;
     font-size: 24px;
     border-radius: 5%;
+    font-family: "Poppins", sans-serif;
 }
 
 button {
@@ -59,8 +61,25 @@ button {
     padding: 8px 16px;
     font-size: 24px;
     border-radius: 5%;
+    font-family: "Poppins", sans-serif;
 }
 
 label {
     font-size: 24px;
+    font-family: "Poppins", sans-serif;
+}
+
+textarea {
+    border-width: 3px;
+    font-size: 24px;
+    border-radius: 2%;
+    font-family: "Poppins", sans-serif;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h5 {
+    font-size: 32px;
 }

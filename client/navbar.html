@@ -91,6 +91,14 @@
         orderAnchor.href = "orders.html";
         orderLink.appendChild(orderAnchor);
 
+        // Create the Forum link
+        const forumLink = document.createElement("li");
+        const forumAnchor = document.createElement("a");
+        forumAnchor.textContent = "Forum";
+        forumAnchor.className = "navBn";
+        forumAnchor.href = "forum.html";
+        forumLink.appendChild(forumAnchor);
+
         // Create the Staff link (if applicable)
         if (localStorage.getItem("access_lvl") === "1") {
             const staffLink = document.createElement("li");
@@ -107,6 +115,7 @@
 
         // Insert the Orders and User links before the Logout link
         const logoutLi = loginBtn.parentElement;
+        logoutLi.parentNode.insertBefore(forumLink, logoutLi);
         logoutLi.parentNode.insertBefore(orderLink, logoutLi);
         logoutLi.parentNode.insertBefore(userLink, logoutLi);
     } else {

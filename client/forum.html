@@ -11,35 +11,57 @@
 <body>
     <script src="javascript/navAndFoot.js"></script>
     <section id="nav"></section>
-    <h1>Welcome to the Forum</h1>
-    <div>
+    <h1>Welcome to the Forums</h1>
+    <div class="forum">
         <div id="book-club-label" class="tab-label" onclick="openTab('book-club')">Book Club</div>
         <div id="communities-label" class="tab-label" onclick="openTab('communities')">Communities</div>
     </div>
     <div id="book-club-content" class="tab-content">
+      <div class="intro">
         <h2>Welcome to the Book Club</h2>
         <p>Discuss your favorite books and authors here.</p>
+      </div>
+      <div class="form">
         <form id="BPForm">
-        <label for="titleB">Title:</label>
-        <input type="text" id="titleB" placeholder="Title" required>
-        <label for="textBC">Discussion</label>
-        <textarea type="text" id="contentB"></textarea>
-        <input type="submit" value="Submit">
-      </form>
-        <div id="book-posts" class="container"></div>    
+          <div class="searchSection">
+            <label for="titleB">Title:</label>
+            <input type="text" id="titleB" placeholder="Title" required>
+          </div>
+          <div class="searchSection">
+            <label for="textBC">Post:</label>
+            <textarea type="text" id="contentB"></textarea>
+          </div>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+      <div class="center">
+        <div id="book-posts" class="container">
+
+        </div>   
+      </div> 
     </div>
     <div id="communities-content" class="tab-content">
+      <div class="intro">
         <h2>Welcome to the Communities</h2>
         <p>Connect with different communities and share your interests.</p>
+      </div>
+      <div class="form">
         <form id="CPForm">
-          <label for="titleC">Title:</label>
-        <input type="text" id="titleC" placeholder="Title" required>
-        <label for="contentC">Post</label>
-        <textarea type="text" id="contentC"></textarea>
-        <input type="submit" value="Submit"> 
-      </form>
+          <div>
+            <label for="titleC">Title:</label>
+            <input type="text" id="titleC" placeholder="Title" required>
+          </div>
+          <div>
+            <label for="contentC">Post:</label>
+            <textarea type="text" id="contentC"></textarea>
+          </div>
+          <input type="submit" value="Submit"> 
+        </form>
+      </div>
+      <div class="center">
         <div id="community-posts" class="container"></div>  
-    </div>
+      </div>
+      </div>
     
     <iframe src="footer.html" frameborder="0" scrolling="no" width="100%" height="100"></iframe>
 

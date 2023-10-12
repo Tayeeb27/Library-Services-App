@@ -1,9 +1,11 @@
 body {
     font-family: Arial, sans-serif;
 }
+
 .tab-content {
     display: none;
 }
+
 .tab-label {
     cursor: pointer;
     padding: 10px 20px;
@@ -11,6 +13,134 @@ body {
     color: #fff;
     border: 1px solid #800f2f;
 }
+
 .tab-label:hover {
     background-color: #ff4d6d;
+}
+
+h1 {
+    text-align: center;
+}
+
+.forum {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.forum div {
+    width: 50%;
+    text-align: center;
+    font-size: 32px;
+}
+
+.tab-content {
+    text-align: center;
+
+}
+
+.intro {
+    margin-left: 5%;
+    border-style: double;
+    border-width: 20px;
+    border-color: #800f2f;
+    margin-bottom: 2%;
+}
+
+#book-club-content .intro {
+    background-color: #ff4d6d;
+    border-width: 5%;
+    margin-top: -1.2%;
+    width: 40%;
+    justify-content: center;
+}
+
+#communities-content .intro {
+    background-color: #ff4d6d;
+    margin-top: -1.2%;
+    width: 40%;
+    justify-content: center;
+    margin-left: 55%;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#BPForm {
+    width: 50%;
+}
+
+#CPForm {
+    width: 50%;
+}
+
+input[type='submit'] {
+    margin: 10px;
+    background-color: #c9184a;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.searchSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+textarea {
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 80%;
+    min-height: 50px;
+    resize: vertical;
+}
+
+
+.center {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#book-posts {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-y: auto;
+    height: 1000px;
+    margin-bottom: 10px;
+}
+
+#community-posts {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-y: scroll;
+    height: 1000px;
+    margin-bottom: 10px;
+}
+
+.book {
+    border-style: outset;
+    border-width: 10px;
+    border-color: #ff4d7d;
+    background-color: #ff8fa3;
+    margin-bottom: 20px;
+    width: 98%;
+}
+
+.dateContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.dateContainer p {
+    margin: 5px;
 }
