@@ -5,7 +5,7 @@
 .container {
   width: 100%;
   margin: auto;
-  border-style: outset;
+  border-style: none;
   border-color: #ff4d6d;
 }
 
@@ -73,7 +73,7 @@
 }
 
 .book {
-  border-style: outset;
+  border-style: none;
   border-width: 10px;
   border-color: #ff4d7d;
   background-color: #ff4d6d;
@@ -126,7 +126,7 @@
   display: flex;
   justify-content: space-evenly;
   background-color: #ff4d6d;
-  border-style: outset;
+  border-style: none;
   border-width: 10px;
   border-color: #ff4d7d;
   margin-left: 5%;
@@ -192,7 +192,7 @@
   display: flex;
   justify-content: space-evenly;
   background-color: #ff4d6d;
-  border-style: outset;
+  border-style: none;
   border-width: 10px;
   border-color: #ff4d7d;
   margin-left: 10%;
@@ -223,7 +223,7 @@ input[type='submit'][value="Confirm Reservation"] {
   flex-direction: column;
   align-items: center;
   background-color: #ff4d6d;
-  border-style: outset;
+  border-style: none;
   border-width: 10px;
   border-color: #ff4d7d;
   margin-left: 10%;

@@ -43,6 +43,10 @@ const createBookElement = (data) => {
   reserveBtn.addEventListener('click', () => {
     addToBasket(data["id"], data['title'], data['author']);
   });
+
+  const hr = document.createElement('hr')
+  book.appendChild(hr)
+
   return book;
 }
 async function loadBooks() {

@@ -57,12 +57,16 @@ input {
 }
 
 button {
-    background-color: #c9184a;
+    background-color: #c98986;
     border: none;
     color: white;
     padding: 8px 16px;
     font-size: 24px;
     border-radius: 5%;
+}
+
+input[type='submit'] {
+    background-color: #c98986;
 }
 
 label {
@@ -77,6 +81,10 @@ textarea {
 
 h1 {
     font-size: 40px;
+}
+
+h2 {
+    font-size: 36px;
 }
 
 h5 {
