@@ -4,7 +4,7 @@
   "description": "",
   "main": "helpers.js",
   "scripts": {
-    "test": "jest --testPathPattern=layout.spec.js --detectOpenHandles --coverage",
+    "test": "jest --watchAll",
     "dev": "live-server --port 9000",
     "coverage": "jest --coverage"
   },
@@ -20,5 +20,10 @@
   "dependencies": {
     "jest-environment-jsdom": "^29.7.0",
     "node-fetch": "^3.3.2"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/__tests__/helpers.js"
+    ]
   }
 }
