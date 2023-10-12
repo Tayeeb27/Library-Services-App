@@ -1,0 +1,18 @@
+h1 {
+    text-align: center;
+}
+
+.orders {
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.order {
+    padding: 0.5%;
+    border: 7px outset #c9184a;
+    background-color: #ff8fa3;
+    margin: 15px;
+}
