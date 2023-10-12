@@ -1,7 +1,7 @@
 .container {
     width: 500px;
     margin: auto;
-    border-style: outset;
+    border-style: none;
     border-color: #ff4d6d;
 }
 

@@ -123,7 +123,7 @@ textarea {
 }
 
 .book {
-    border-style: outset;
+    border-style: none;
     border-width: 10px;
     border-color: #ff4d7d;
     background-color: #ff8fa3;

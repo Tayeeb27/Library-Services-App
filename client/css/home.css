@@ -1,11 +1,15 @@
 .container {
     padding: 50px;
-    border-style: ridge;
-    border: 7px solid #ff4d6d;
     outline: 90px solid #fff0f3;
 }
 
 .container1 {
     margin-right: 0px;
     margin-left: 0px;
+}
+
+
+.carPics {
+    padding: -1%;
+    width: 24.8%;
 }
