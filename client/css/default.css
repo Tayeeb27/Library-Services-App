@@ -1,7 +1,12 @@
 /* Background colour */
-* {
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Caveat&display=swap');
+/* * {
     font-family: 'Times New Roman', serif;
-}
+} */
 
 body {
     background-color: #fff0f3;
@@ -40,13 +45,13 @@ body {
     transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
 }
 
-/* importing fonts 
 
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
 
-font-family: "Rubik", sans-serif; */
 
-p {
+ 
+
+p { 
+    font-family: "Roboto", sans-serif;
     font-size: 24px;
 }
 
@@ -85,13 +90,22 @@ textarea {
 }
 
 h1 {
-    font-size: 40px;
+    font-family: 'Satisfy', cursive;
+    font-size: 80px;
 }
 
 h2 {
-    font-size: 36px;
+    font-family: 'Caveat', cursive;
+    font-size: 60px;
+
+}
+#caroh2 {
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h5 {
+    font-family: "Rubik", sans-serif;
     font-size: 32px;
 }

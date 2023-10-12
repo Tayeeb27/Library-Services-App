@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 #editForm {
   display: none;
 }
@@ -139,6 +140,7 @@
 }
 
 .editSection label {
+  font-family: "Roboto", sans-serif;
   margin-left: 20px;
   width: 8%;
 }
@@ -149,6 +151,7 @@
 }
 
 .editSection textarea {
+  font-family: "Roboto", sans-serif;
   margin-top: 20px;
   margin-left: 20px;
   width: 30%;
@@ -166,4 +169,7 @@
   margin-top: 10px;
   margin-left: 50%;
   margin-right: 50%;
+}
+#bookForm label, textarea {
+  font-family: "Roboto", sans-serif;
 }

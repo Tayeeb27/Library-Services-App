@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 .container {
     margin-top: 500px;
-    width: 500px;
+    width: 800px;
     padding-right: 50px;
     margin: auto;
     border-style: none;
@@ -9,8 +10,6 @@
 
 h1 {
     text-align: center;
-    padding-right: 225px;
-    width: 60%;
 }
 
 /* Form css */
@@ -32,8 +31,9 @@ fieldset {
     padding: 10px;
     display: flex;
 }
-
 label {
+    
+    font-family: "Roboto", sans-serif;
     display: inline-block;
     width: 150px;
     text-align: center;

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 .container {
     width: 500px;
     margin: auto;
@@ -26,6 +27,7 @@ fieldset {
 }
 
 label {
+    font-family: "Roboto", sans-serif;
     display: inline-block;
     width: 150px;
     text-align: center;
@@ -33,20 +35,29 @@ label {
 
 .register input {
     font-size: large;
+    width:400px;
+    height: 35px;
 }
 
 .register input[type="submit"] {
     margin-top: 10px;
-    margin-left: 40%;
-    background-color: #c9184a;
+    margin-left: 35%;
+    background-color: #c98986;
     border: none;
     color: white;
     padding: 8px 16px;
-    text-decoration: none;
-    cursor: pointer;
+    font-size: 24px;
+    border-radius: 5%;
+    width:200px;
+    height:45px;
 }
 
 p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
     display: flex;
     justify-content: center;
     align-items: center;

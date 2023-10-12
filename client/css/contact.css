@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 .container {
     margin-top: 500px;
-    width: 500px;
+    width: 800px;
     padding-right: 50px;
     margin: auto;
     border-style: none;
@@ -8,9 +9,9 @@
 }
 
 h1 {
-    text-align: center;
-    padding-right: 225px;
-    width: 60%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Form css */
@@ -30,6 +31,8 @@ fieldset {
 }
 
 label {
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
     display: inline-block;
     width: 150px;
     text-align: center;
@@ -37,12 +40,13 @@ label {
 
 input {
     font-size: large;
+    width:400px
 }
 
 textarea {
     font-size: large;
     resize: vertical;
-    width: 228px;
+    width: 400px;
 }
 
 input[type="submit"] {
@@ -55,6 +59,7 @@ input[type="submit"] {
     padding: 8px 16px;
     text-decoration: none;
     cursor: pointer;
+    width:250px;
 }
 
 p {

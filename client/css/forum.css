@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 #communities-content {
     display: none;
 }
@@ -57,6 +58,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+.form label {
+    font-family: "Roboto", sans-serif;
 }
 
 #BPForm {
@@ -130,3 +134,10 @@ textarea {
 .dateContainer p {
     margin: 5px;
 }
+.center-text {
+    text-align: center; 
+  }
+  
+  .center-text p {
+    margin: 0 auto; 
+  }

@@ -7,10 +7,9 @@ const loadUserInfo = async() => {
         if (response.status == 200) {
           const name = document.getElementById("name");
           const email = document.getElementById("email");
-          const password = document.getElementById("password");
           name.value = user["name"];
           email.value = user["email"];
-          password.value = user["password"];
+          
     
           
         } else {

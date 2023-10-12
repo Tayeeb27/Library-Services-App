@@ -16,3 +16,16 @@
 .img {}
 
 .belowImg {}
+
+h1 {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.center-text {
+    text-align: center; 
+  }
+  
+  .center-text p {
+    margin: 0 auto; 
+  }

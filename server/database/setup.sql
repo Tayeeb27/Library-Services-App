@@ -29,6 +29,12 @@ VALUES
 ('Harry Potter', 'J. K. Rowling', 'The novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry', 'Fantasy', 4.8, '1997-06-25', 'https://m.media-amazon.com/images/I/51zZ3SAulVL._SY445_SX342_.jpg'),
 ('The Idiot', 'Fyodor Dostoevsky', '“The Idiot” tells the story of a young prince called Lev Nikolayevich Myshkin whose simple goodness is wrongly confused with a lack of intelligence by all he encounters.', 'Foreign', 4.5, '1868-01-01', 'https://m.media-amazon.com/images/I/71ODBY2ChvL._SY466_.jpg'),
 ('Doll House', 'John Hunt', 'A Doll house Horror Story', 'Horror', 4.4, '2017-01-25', 'https://m.media-amazon.com/images/I/81HRGUehn1L._SY385_.jpg');
+('To Kill a Mockingbird', 'Harper Lee', 'The story of young Scout Finch and her brother Jem as they grow up in a racially divided Southern town.', 'Novel', 4.7, '1960-07-11', 'https://m.media-amazon.com/images/I/81c6aew79KL._SL1500_.jpg'),
+('1984', 'George Orwell', 'A dystopian novel set in a totalitarian society under the surveillance of Big Brother.', 'Science Fiction', 4.5, '1949-06-08', 'https://m.media-amazon.com/images/I/91O1dxoUXoL._SL1500_.jpg'),
+('Pride and Prejudice', 'Jane Austen', 'A novel of manners revolving around the marriage of the strong-willed Elizabeth Bennet and the haughty Mr. Darcy.', 'Novel', 4.8, '1813-01-28', 'https://m.media-amazon.com/images/I/81fygAyvKML._SL1500_.jpg'),
+('The Great Gatsby', 'F. Scott Fitzgerald', 'Set during the Roaring Twenties, the novel is a critique of the American Dream.', 'Novel', 4.2, '1925-04-10', 'https://m.media-amazon.com/images/I/81WnXhMjGgL._SL1500_.jpg'),
+('The Catcher in the Rye', 'J.D. Salinger', 'Follows the life of 16-year-old Holden Caulfield after he is expelled from prep school.', 'Novel', 4.0, '1951-07-16', 'https://m.media-amazon.com/images/I/71D6PnMg4WL._SL1500_.jpg'),
+('The Hobbit', 'J.R.R. Tolkien', 'A fantasy novel that follows the journey of Bilbo Baggins as he seeks treasure guarded by the dragon Smaug.', 'Fantasy', 4.7, '1937-09-21', 'https://m.media-amazon.com/images/I/81mCE+uclxL._SL1500_.jpg');
 
 -- Drop and create the "users" table
 CREATE TABLE users (
@@ -43,10 +49,6 @@ CREATE TABLE users (
 -- Insert data into the "users" table
 INSERT INTO users (name, email, password)
 VALUES
-('john doe', 'johndoe@example.com', 'password213'),
-('jane smith', 'janesmith@example.com', 'qwerty123'),
-('william allen', 'william123@example.com', 'pass1234'),
-('sarah conner', 'saraht2@example.com', 'judgementday');
 
 -- Drop and create the "orders" table
 CREATE TABLE orders (
