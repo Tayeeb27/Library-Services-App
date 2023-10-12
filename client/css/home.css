@@ -3,13 +3,25 @@
     outline: 90px solid #fff0f3;
 }
 
-.container1 {
-    margin-right: 0px;
-    margin-left: 0px;
+.size {
+    width: 400px;
+    height: 590px;
+
 }
 
-
 .carPics {
-    padding: -1%;
-    width: 24.8%;
+    width: 400px;
+    height: 590px;
+    object-fit: cover;
+    /* This property will maintain the aspect ratio and crop if needed */
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
 }

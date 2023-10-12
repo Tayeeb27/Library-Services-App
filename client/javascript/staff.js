@@ -41,6 +41,9 @@ const createBookElement = (data) => {
   deleteBook.value = data['book_id']
   infoContainer.appendChild(deleteBook);
 
+  const hr = document.createElement('hr')
+  book.appendChild(hr)
+
   deleteBook.addEventListener("click", async (e) => {
     try {
       const id = e.target.value

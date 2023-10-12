@@ -5,8 +5,6 @@
 .container {
   width: 100%;
   margin: auto;
-  border-style: none;
-  border-color: #ff4d6d;
 }
 
 .Search {
@@ -47,7 +45,6 @@
 
 
 .Search button {
-  background-color: #c9184a;
   border: none;
   color: white;
   padding: 8px 16px;
@@ -75,8 +72,6 @@
 .book {
   border-style: none;
   border-width: 10px;
-  border-color: #ff4d7d;
-  background-color: #ff4d6d;
   margin-bottom: 20px;
   width: 98%;
 }
@@ -84,13 +79,12 @@
 .titleContainer {
   display: flex;
   flex-direction: column;
+  padding-left: 2%;
 }
 
 .infoContainer {
-  background-color: #ff8fa3;
   max-width: 100%;
   overflow: hidden;
-
 }
 
 .infoContainer p {
@@ -103,13 +97,12 @@
   border-radius: 5%;
   float: left;
   margin: 5px;
+  margin-right: 3%;
 }
 
+
 .book button {
-  margin-top: 10px;
-  margin-bottom: 10px;
   margin-right: 10px;
-  background-color: #c9184a;
   border: none;
   color: white;
   padding: 8px 16px;
@@ -125,10 +118,8 @@
   padding-bottom: 5px;
   display: flex;
   justify-content: space-evenly;
-  background-color: #ff4d6d;
   border-style: none;
   border-width: 10px;
-  border-color: #ff4d7d;
   margin-left: 5%;
   margin-right: 5%;
 }
@@ -141,7 +132,6 @@
 }
 
 .edit form {
-  background-color: #ff8fa3;
   padding: 10px;
   width: 100%;
   margin-left: 5%;
@@ -168,7 +158,6 @@
 
 
 .edit button {
-  background-color: #c9184a;
   border: none;
   color: white;
   padding: 8px 16px;
@@ -177,81 +166,4 @@
   margin-top: 10px;
   margin-left: 50%;
   margin-right: 50%;
-}
-
-
-
-/* basket and checkout */
-
-.checkOut {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding-left: 20%;
-  padding-right: 20%;
-  padding-bottom: 5px;
-  display: flex;
-  justify-content: space-evenly;
-  background-color: #ff4d6d;
-  border-style: none;
-  border-width: 10px;
-  border-color: #ff4d7d;
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
-.checkOut form {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
-  background-color: #ff8fa3;
-  outline: 10px solid #ff8fa3;
-}
-
-input[type='submit'][value="Confirm Reservation"] {
-  margin-top: 10px;
-  background-color: #c9184a;
-  border: none;
-  color: white;
-  padding: 8px 16px;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.basketAll {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #ff4d6d;
-  border-style: none;
-  border-width: 10px;
-  border-color: #ff4d7d;
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
-
-.basketAll h2 {
-  text-decoration: underline;
-}
-
-.basket .selected-book {
-  display: flex;
-  align-items: center;
-  background-color: #ff8fa3;
-  margin: 10px;
-  /* width: 90%;
-    height: 90%; */
-  padding: 5px;
-
-}
-
-.basket .selected-book p {
-  margin: 10px;
-  padding: 5px;
-}
-
-.basket button {
-  margin-left: 40%;
-  margin-bottom: 10px;
 }

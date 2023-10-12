@@ -36,6 +36,8 @@ const createElement = (data) => {
   timeP.innerHTML = `at ${formattedTime}`;
   dateC.appendChild(timeP);
 
+  const hr = document.createElement('hr')
+  book.appendChild(hr)
 
   return book;
 }

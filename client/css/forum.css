@@ -1,21 +1,19 @@
-.tab-content {
+#communities-content {
     display: none;
 }
 
 .tab-label {
     cursor: pointer;
     padding: 10px 20px;
-    background-color: #800f2f;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 10%;
     color: #fff;
-    border: 1px solid #800f2f;
+
 }
 
 .tab-label:hover {
-    background-color: #ff4d6d;
-}
-
-h1 {
-    text-align: center;
+    background-color: #c98986;
 }
 
 .forum {
@@ -37,14 +35,10 @@ h1 {
 
 .intro {
     margin-left: 5%;
-    border-style: double;
-    border-width: 20px;
-    border-color: #800f2f;
     margin-bottom: 2%;
 }
 
 #book-club-content .intro {
-    background-color: #ff4d6d;
     border-width: 5%;
     margin-top: -1.2%;
     width: 40%;
@@ -52,7 +46,6 @@ h1 {
 }
 
 #communities-content .intro {
-    background-color: #ff4d6d;
     margin-top: -1.2%;
     width: 40%;
     justify-content: center;
@@ -76,7 +69,6 @@ h1 {
 
 input[type='submit'] {
     margin: 10px;
-    background-color: #c9184a;
     border: none;
     color: white;
     padding: 8px 16px;
@@ -108,7 +100,7 @@ textarea {
     display: flex;
     flex-direction: column;
     width: 100%;
-    overflow-y: auto;
+    overflow-y: scroll;
     height: 1000px;
     margin-bottom: 10px;
 }
@@ -125,8 +117,6 @@ textarea {
 .book {
     border-style: none;
     border-width: 10px;
-    border-color: #ff4d7d;
-    background-color: #ff8fa3;
     margin-bottom: 20px;
     width: 98%;
 }

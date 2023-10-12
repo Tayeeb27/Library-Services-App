@@ -1,5 +1,4 @@
 .container {
-
     width: 100%;
     margin: auto;
 }
@@ -75,10 +74,6 @@
     display: flex;
 }
 
-#searchbooktext {
-    width: 40%;
-}
-
 .searchBook input[type='submit'] {
     border: none;
     color: white;
@@ -105,8 +100,6 @@
 .book {
     border-style: none;
     border-width: 10px;
-    /* border-color: #ff4d7d; */
-    /* background-color: #ff4d6d; */
     margin-bottom: 20px;
     width: 100%;
 }
@@ -118,14 +111,8 @@
 }
 
 .infoContainer {
-    /* background-color: #ff8fa3; */
     max-width: 100%;
     overflow: hidden;
-
-}
-
-.infoParagraph {
-    margin-left: 20px;
 }
 
 .infoContainer p {
@@ -144,7 +131,6 @@
 
 .book button {
     margin-right: 10px;
-    /* background-color: #c9184a; */
     border: none;
     color: white;
     padding: 8px 16px;
@@ -163,10 +149,8 @@
     padding-bottom: 5px;
     display: flex;
     justify-content: space-evenly;
-    /* background-color: #ff4d6d; */
     border-style: none;
     border-width: 10px;
-    /* border-color: #ff4d7d; */
     margin-left: 10%;
     margin-right: 10%;
 }
@@ -176,8 +160,6 @@
     display: flex;
     flex-direction: column;
     margin: 10px;
-    /* background-color: #ff8fa3; */
-    /* outline: 10px solid #ff8fa3; */
 }
 
 input[type='submit'][value="Confirm Reservation"] {
@@ -193,10 +175,8 @@ input[type='submit'][value="Confirm Reservation"] {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background-color: #ff4d6d; */
     border-style: none;
     border-width: 10px;
-    /* border-color: #ff4d7d; */
     margin-left: 10%;
     margin-right: 10%;
 }
@@ -209,10 +189,7 @@ input[type='submit'][value="Confirm Reservation"] {
 .basket .selected-book {
     display: flex;
     align-items: center;
-    /* background-color: #ff8fa3; */
     margin: 10px;
-    /* width: 90%;
-    height: 90%; */
     padding: 5px;
 
 }

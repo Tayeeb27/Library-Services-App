@@ -1,4 +1,3 @@
 .vscode
 client/__tests__/node_modules/
 client/__tests__/coverage/
-temp.html

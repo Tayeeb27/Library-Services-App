@@ -11,10 +11,9 @@
 <body>
     <script src="javascript/navAndFoot.js"></script>
     <section id="nav"></section>
-    <h1>Welcome to the Forums</h1>
     <div class="forum">
-        <div id="book-club-label" class="tab-label" onclick="openTab('book-club')">Book Club</div>
-        <div id="communities-label" class="tab-label" onclick="openTab('communities')">Communities</div>
+        <button id="book-club-label" class="tab-label" onclick="openTab('book-club')">Book Club Forum</button>
+        <button id="communities-label" class="tab-label" onclick="openTab('communities')">Communities Forum</button>
     </div>
     <div id="book-club-content" class="tab-content">
       <div class="intro">
@@ -31,7 +30,7 @@
             <label for="textBC">Post:</label>
             <textarea type="text" id="contentB"></textarea>
           </div>
-          <input type="submit" value="Submit">
+          <input type="submit" value="Post">
         </form>
       </div>
       <div class="center">
@@ -47,15 +46,15 @@
       </div>
       <div class="form">
         <form id="CPForm">
-          <div>
+          <div class="searchSection">
             <label for="titleC">Title:</label>
             <input type="text" id="titleC" placeholder="Title" required>
           </div>
-          <div>
+          <div class="searchSection">
             <label for="contentC">Post:</label>
             <textarea type="text" id="contentC"></textarea>
           </div>
-          <input type="submit" value="Submit"> 
+          <input type="submit" value="Post"> 
         </form>
       </div>
       <div class="center">
