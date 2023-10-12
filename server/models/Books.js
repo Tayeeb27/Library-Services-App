@@ -42,8 +42,6 @@ class Books {
         }
         return response.rows.map(bc => new Books(bc))
     }
-
-
     //create
     static async createBook(data) {
         const { title, author, description, category, rating, release_year, image_url } = data;
