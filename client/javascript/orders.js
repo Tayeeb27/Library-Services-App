@@ -6,18 +6,18 @@ async function createOrderElement(data) {
     order.className = 'order';
 
     const bookTitle = document.createElement('p');
-    bookTitle.textContent = book["title"];
+    bookTitle.innerHTML = `<b>Title:</b> ${book["title"]}`;
     order.appendChild(bookTitle);
 
     const collectionDate = document.createElement('p');
     const sqlDate = data['collection_date'];
     const date = new Date(sqlDate);
     const formattedDate = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
-    collectionDate.textContent = formattedDate;
+    collectionDate.innerHTML = `<b>Collection Date:</b> ${formattedDate}`;
     order.appendChild(collectionDate);
 
     const orderReference = document.createElement('p');
-    orderReference.textContent = data['order_reference'];
+    orderReference.innerHTML = `<b>Order Reference:</b> ${data['order_reference']}`;
     order.appendChild(orderReference);
 
     return order;

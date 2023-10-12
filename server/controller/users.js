@@ -36,6 +36,12 @@ const updateUser = async (req, res) => {
     try {
       const id = req.params.id; // Assuming you're extracting the user ID from the request parameters
       const data = req.body;
+      
+      const salt = await bcrypt.genSalt(parseInt(process.env.BCRYPT_SALT_ROUNDS));
+
+      // Hash the password
+      data["password"] = await bcrypt.hash(data["password"], salt);
+
       const updatedUser = await Users.updateUser(id, data); // Pass the user ID as the first argument
       res.status(201).json(updatedUser);
     } catch (error) {

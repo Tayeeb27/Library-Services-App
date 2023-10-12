@@ -20,6 +20,10 @@ h1 {
     align-items: center;
 }
 
+form {
+    display: inline-block;
+    padding: 2px;
+}
 
 fieldset {
     font-size: larger;
@@ -39,16 +43,14 @@ input {
     font-size: large;
 }
 
-textarea {
+
+.changes {
     font-size: large;
-    resize: vertical;
-    width: 228px;
 }
 
-input[type="submit"] {
+.changes {
     margin-top: 10px;
     margin-left: 40%;
-    margin-bottom: 10px;
     background-color: #c9184a;
     border: none;
     color: white;

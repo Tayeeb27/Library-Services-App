@@ -5,7 +5,7 @@ const index = async (req, res) => {
         const books = await Books.getAll()
         res.status(200).json(books)
     } catch (err) {
-        res.status(500).json({error: err.message})
+        res.status(500).json({ error: err.message })
     }
 }
 
@@ -15,7 +15,7 @@ const bookName = async (req, res) => {
         const book = await Books.getOneByBookName(name);
         res.status(200).json(book)
     } catch (err) {
-        res.status(404).json({error: err.message})
+        res.status(404).json({ error: err.message })
     }
 }
 const show = async (req, res) => {
@@ -24,7 +24,7 @@ const show = async (req, res) => {
         const book = await Books.getOneByID(id);
         res.status(200).json(book)
     } catch (err) {
-        res.status(404).json({error: err.message})
+        res.status(404).json({ error: err.message })
     }
 }
 
@@ -36,13 +36,42 @@ const bookCategory = async (req, res) => {
         res.status(200).json(bookCategory)
 
     } catch (err) {
-        res.status(404).json({error: err.message})
+        res.status(404).json({ error: err.message })
     }
-        
+
+}
+const createBook = async (req, res) => {
+    try {
+        const book = await Books.createBook(req.body);
+        res.status(200).json(book)
+    } catch (err) {
+        res.status(404).json({ error: err.message })
+    }
+}
+
+const updateBook = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const book = await Books.updateBook(id, req.body);
+        res.status(200).json(book)
+    } catch (err) {
+        res.status(404).json({ error: err.message })
+    }
+}
+
+const deleteBook = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const book = await Books.getOneByID(id);
+        const result = await book.deleteBook()
+        res.status(200).json(result)
+    } catch (err) {
+        res.status(404).json({ error: err.message })
+    }
 }
 
 
 
 
 
-module.exports = { index, bookName, show, bookCategory }
+module.exports = { index, bookName, show, bookCategory, createBook, updateBook, deleteBook }

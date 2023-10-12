@@ -4,6 +4,8 @@ DROP TABLE IF EXISTS orders;
 DROP TABLE IF EXISTS token;
 DROP TABLE IF EXISTS books;
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS community_posts;
+DROP TABLE IF EXISTS book_posts;
 
 
 CREATE TABLE books (
@@ -74,3 +76,28 @@ CREATE TABLE token (
     PRIMARY KEY (token_id),
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
+
+CREATE TABLE community_posts (
+    community_post_id INT GENERATED ALWAYS AS IDENTITY,
+    title VARCHAR (100) NOT NULL,
+    content VARCHAR (500) NOT NULL,
+    date DATE DEFAULT CURRENT_DATE,
+    time TIME DEFAULT CURRENT_TIME,
+    PRIMARY KEY (community_post_id)
+);
+INSERT INTO community_posts (title, content) VALUES
+    ('Community Post 1', 'This is the content of the first community post.'),
+    ('Community Post 2', 'The second community post has some content.'),
+    ('Community Post 3', 'Content for the third community post.');
+CREATE TABLE book_posts (
+    book_post_id INT GENERATED ALWAYS AS IDENTITY,
+    title VARCHAR (100) NOT NULL,
+    content VARCHAR (500) NOT NULL,
+    date DATE DEFAULT CURRENT_DATE,
+    time TIME DEFAULT CURRENT_TIME,
+    PRIMARY KEY (book_post_id)
+);
+INSERT INTO book_posts (title, content) VALUES
+    ('Book Post 1', 'This is the content of the first book post.'),
+    ('Book Post 2', 'The second book post has some content.'),
+    ('Book Post 3', 'Content for the third book post.');

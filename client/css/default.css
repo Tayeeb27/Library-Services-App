@@ -1,4 +1,7 @@
 /* Background colour */
+* {
+    font-family: 'Times New Roman', serif;
+}
 
 body {
     background-color: #fff0f3;
@@ -17,6 +20,7 @@ body {
     justify-content: space-between;
     padding: 0.2rem 1rem;
     font-family: "Poppins", sans-serif;
+    /* font-family: "Rubik", sans-serif; */
     font-weight: 700;
     font-size: 14px;
     text-align: center;
@@ -34,4 +38,47 @@ body {
 
 .navBn:hover {
     transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+}
+
+/* importing fonts 
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+
+font-family: "Rubik", sans-serif; */
+
+p {
+    font-size: 24px;
+}
+
+input {
+    border-width: 3px;
+    font-size: 24px;
+    border-radius: 5%;
+}
+
+button {
+    background-color: #c9184a;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    font-size: 24px;
+    border-radius: 5%;
+}
+
+label {
+    font-size: 24px;
+}
+
+textarea {
+    border-width: 3px;
+    font-size: 24px;
+    border-radius: 2%;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h5 {
+    font-size: 32px;
 }

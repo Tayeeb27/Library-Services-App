@@ -6,7 +6,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 20px;        
+        margin-bottom: 20px;  
+        height: 80px;      
     }
     .primaryNav ul {
         list-style-type: none;
@@ -24,10 +25,11 @@
         color: white;
         text-align: center;
         font-family: "Poppins", sans-serif;
-        font-weight: 600;
-        font-size: 14px;
-        padding: 8px 15px;
+        font-weight: 300;
+        font-size: 24px;
+        padding: 8px 16px;
         text-decoration: none;
+        border: 0px dotted white;
     }
     .title {
         display: block;
@@ -35,7 +37,7 @@
         text-align: center;
         font-family: "Poppins", sans-serif;
         font-weight: 700;
-        font-size: 20px;
+        font-size: 32px;
         padding: 14px 16px;
         text-decoration: none;
         
@@ -48,7 +50,7 @@
 </head>
 <!-- old nav bar -->
 <nav class="primaryNav">
-    <span class="title">Library Services <img src="assets/book.ico" alt="Logo" width="30" height="24"> </span>
+    <span class="title">Library Services <img src="assets/book.ico" alt="Logo" width="40" height="32"> </span>
     <ul>
         <li>
             <a class="navBn" href="home.html">Home</a>
@@ -86,8 +88,16 @@
         const orderAnchor = document.createElement("a");
         orderAnchor.textContent = "Orders";
         orderAnchor.className = "navBn";
-        orderAnchor.href = "order.html";
+        orderAnchor.href = "orders.html";
         orderLink.appendChild(orderAnchor);
+
+        // Create the Forum link
+        const forumLink = document.createElement("li");
+        const forumAnchor = document.createElement("a");
+        forumAnchor.textContent = "Forum";
+        forumAnchor.className = "navBn";
+        forumAnchor.href = "forum.html";
+        forumLink.appendChild(forumAnchor);
 
         // Create the Staff link (if applicable)
         if (localStorage.getItem("access_lvl") === "1") {
@@ -105,6 +115,7 @@
 
         // Insert the Orders and User links before the Logout link
         const logoutLi = loginBtn.parentElement;
+        logoutLi.parentNode.insertBefore(forumLink, logoutLi);
         logoutLi.parentNode.insertBefore(orderLink, logoutLi);
         logoutLi.parentNode.insertBefore(userLink, logoutLi);
     } else {
