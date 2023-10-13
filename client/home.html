@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/book.ico">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/default.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>Home</title>
+</head>
+<body>
+  <script src="javascript/navAndFoot.js"></script>
+  <section id="nav">
+  </section>
+  <div class="belowNav">
+    <h1> Welcome To Our Digital Library Service</h1>
+    <p> Welcome to our modern library service, where the world of literature is at your fingertips. With our convenient reservation system, you can secure your next captivating read with ease. But that's just the beginning!. </p>
+    <p> Dive deeper into the magic of books by joining our vibrant book club, where fellow bibliophiles come together to discuss, dissect, and discover literary treasures. </p>
+    <p>If you ever find yourself yearning for insightful conversations and connection, our community forum is your digital haven, where readers unite to share recommendations, reviews, and their love for the written word. Explore, engage, and enrich your reading journey with our all-in-one library experience. </p>
+    <hr> 
+    <h2 id="caroh2">Check Out Our Most Popular Books</h2>       
+    <!-- Carasole  -->
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-10">
+        <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://m.media-amazon.com/images/I/91ORJa-xI9L._SY466_.jpg" class="carPics"/>
+              <img src="https://m.media-amazon.com/images/I/51XUd9lyjwL._SX342_SY445_.jpg" class="carPics"/>
+              <img src="https://m.media-amazon.com/images/I/41esrpLG2BL._SY445_SX342_.jpg" class="carPics"/>
+              <img src="https://m.media-amazon.com/images/I/51zZ3SAulVL._SY445_SX342_.jpg" class="carPics"/>
+            </div>
+            <div class="carousel-item">
+              <img src="https://m.media-amazon.com/images/I/71ODBY2ChvL._SY466_.jpg" class="carPics"/>
+              <img src="https://m.media-amazon.com/images/I/81c6aew79KL._SL1500_.jpg" class="carPics"/>
+              <img src="https://m.media-amazon.com/images/I/91O1dxoUXoL._SL1500_.jpg" class="carPics"/>
+              <img src="https://m.media-amazon.com/images/I/81WnXhMjGgL._SL1500_.jpg" class="carPics"/>
+            </div>
+            <div class="carousel-item">
+              <img src="https://m.media-amazon.com/images/I/81mCE+uclxL._SL1500_.jpg" class="carPics"/>
+              <img src="https://m.media-amazon.com/images/I/71D6PnMg4WL._SL1500_.jpg" class="carPics"/>
+              <img src="https://m.media-amazon.com/images/I/81fygAyvKML._SL1500_.jpg" class="carPics"/>
+              <img src="https://m.media-amazon.com/images/I/81HRGUehn1L._SY385_.jpg" class="carPics"/>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="prev"
+          >
+          <span
+            class="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
+          <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="next"
+          >
+            <span
+              class="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+</div>
+  <hr>
+    <iframe src="footer.html" frameborder="0" scrolling="no" width="100%" height="100"></iframe>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"
+></script>
+<script>
+  $(function(){
+    $("#nav").load("navbar.html");
+  });
+</script>
+<script src="javascript/home.js"></script>

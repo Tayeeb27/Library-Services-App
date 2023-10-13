@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+.container {
+    margin-top: 500px;
+    width: 800px;
+    padding-right: 50px;
+    margin: auto;
+    border-style: none;
+    border-color: #ff4d6d;
+    min-height: 1200px;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Form css */
+.formBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+fieldset {
+    font-size: larger;
+    margin-top: 10px;
+    border-style: none;
+    padding: 10px;
+    display: flex;
+}
+
+label {
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+}
+
+input {
+    font-size: large;
+    width: 400px
+}
+
+textarea {
+    font-size: large;
+    resize: vertical;
+    width: 400px;
+}
+
+input[type="submit"] {
+    margin-top: 10px;
+    margin-left: 40%;
+    margin-bottom: 10px;
+    background-color: #c9184a;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    cursor: pointer;
+    width: 250px;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

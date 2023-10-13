@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+#communities-content {
+    display: none;
+}
+
+.tab-label {
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 10%;
+    color: #fff;
+
+}
+
+.tab-label:hover {
+    background-color: #c98986;
+}
+
+.forum {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.forum div {
+    width: 50%;
+    text-align: center;
+    font-size: 32px;
+}
+
+.tab-content {
+    text-align: center;
+
+}
+
+.intro {
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+
+#book-club-content .intro {
+    border-width: 5%;
+    margin-top: -1.2%;
+    width: 40%;
+    justify-content: center;
+}
+
+#communities-content .intro {
+    margin-top: -1.2%;
+    width: 40%;
+    justify-content: center;
+    margin-left: 55%;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.form label {
+    font-family: "Roboto", sans-serif;
+}
+
+#BPForm {
+    width: 50%;
+}
+
+#CPForm {
+    width: 50%;
+}
+
+input[type='submit'] {
+    margin: 10px;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.searchSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+textarea {
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 80%;
+    min-height: 50px;
+    resize: vertical;
+}
+
+
+.center {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#book-posts {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-y: scroll;
+    height: 1000px;
+    margin-bottom: 10px;
+}
+
+#community-posts {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-y: scroll;
+    height: 1000px;
+    margin-bottom: 10px;
+}
+
+.book {
+    border-style: none;
+    border-width: 10px;
+    margin-bottom: 20px;
+    width: 98%;
+}
+
+.dateContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.dateContainer p {
+    margin: 5px;
+}
+.center-text {
+    text-align: center; 
+  }
+  
+  .center-text p {
+    margin: 0 auto; 
+  }

@@ -1,0 +1,31 @@
+.container {
+    padding: 50px;
+    outline: 50px solid #fff0f3;
+}
+
+.personBorder {
+    min-height: 1000px;
+}
+
+.person {
+    padding: 50px;
+    outline: 10px;
+}
+
+.img {
+    border-radius: 5%;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.center-text p {
+    margin: 0 auto;
+}

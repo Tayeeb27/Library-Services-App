@@ -1,0 +1,31 @@
+.container {
+    padding: 50px;
+    outline: 90px solid #fff0f3;
+}
+
+.size {
+    width: 400px;
+    height: 590px;
+
+}
+
+.carPics {
+    width: 400px;
+    height: 590px;
+    object-fit: cover;
+    /* This property will maintain the aspect ratio and crop if needed */
+}
+
+img {
+    border-radius: 5%;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+}

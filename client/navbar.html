@@ -1,0 +1,136 @@
+<link rel="stylesheet" href="css/default.css">
+<head>
+<style>
+    .primaryNav {
+        background-color: #A01300;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;  
+        height: 80px;      
+    }
+    .primaryNav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 5px;
+        overflow: hidden;
+    }
+    .primaryNav li {
+        float: left;
+        padding: 7px;
+        
+    }
+    .primaryNav li a {
+        display: block;
+        color: white;
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+        font-size: 24px;
+        padding: 8px 16px;
+        text-decoration: none;
+        border: 0px dotted white;
+    }
+    .title {
+        display: block;
+        color: white;
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-size: 32px;
+        padding: 14px 16px;
+        text-decoration: none;
+        
+    }
+    .primaryNav li a:hover {
+        background-color: #c98986;
+    }
+
+    </style>
+</head>
+<!-- old nav bar -->
+<nav class="primaryNav">
+    <span class="title"> Florin & Burkes Library Service <img src="assets/book.ico" alt="Logo" width="40" height="32"> </span>
+    <ul>
+        <li>
+            <a class="navBn" href="home.html">Home</a>
+        </li>
+        <li>
+            <a class="navBn" href="about.html">About</a>
+        </li>
+        <li>
+            <a class="navBn" href="book.html">Book</a>
+        </li>
+        <li>
+            <a class="navBn" href="contact.html">Contact</a>
+        </li>
+        <li>
+            <a class="navBn" id="login-logout" href="#">Login</a>
+        </li>
+    </ul>
+</nav>
+<script>
+    const loginBtn = document.getElementById("login-logout");
+
+    if (localStorage.getItem("token") !== null) {
+        loginBtn.textContent = "Logout";
+
+        // Create the User link
+        const userLink = document.createElement("li");
+        const userAnchor = document.createElement("a");
+        userAnchor.textContent = "User";
+        userAnchor.className = "navBn";
+        userAnchor.href = "user.html";
+        userLink.appendChild(userAnchor);
+
+        // Create the Orders link
+        const orderLink = document.createElement("li");
+        const orderAnchor = document.createElement("a");
+        orderAnchor.textContent = "Orders";
+        orderAnchor.className = "navBn";
+        orderAnchor.href = "orders.html";
+        orderLink.appendChild(orderAnchor);
+
+        // Create the Forum link
+        const forumLink = document.createElement("li");
+        const forumAnchor = document.createElement("a");
+        forumAnchor.textContent = "Forum";
+        forumAnchor.className = "navBn";
+        forumAnchor.href = "forum.html";
+        forumLink.appendChild(forumAnchor);
+
+        // Create the Staff link (if applicable)
+        if (localStorage.getItem("access_lvl") === "1") {
+            const staffLink = document.createElement("li");
+            const staffAnchor = document.createElement("a");
+            staffAnchor.textContent = "Staff";
+            staffAnchor.className = "navBn";
+            staffAnchor.href = "staff.html";
+            staffLink.appendChild(staffAnchor);
+            
+            // Insert the Staff link before the Logout link
+            const logoutLi = loginBtn.parentElement;
+            logoutLi.parentNode.insertBefore(staffLink, logoutLi);
+        }
+
+        // Insert the Orders and User links before the Logout link
+        const logoutLi = loginBtn.parentElement;
+        logoutLi.parentNode.insertBefore(forumLink, logoutLi);
+        logoutLi.parentNode.insertBefore(orderLink, logoutLi);
+        logoutLi.parentNode.insertBefore(userLink, logoutLi);
+    } else {
+        loginBtn.textContent = "Login";
+    }
+
+    loginBtn.addEventListener("click", () => {
+        if (loginBtn.textContent === "Logout") {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user_id');
+            localStorage.removeItem('access_lvl');
+            loginBtn.textContent = "Login";
+            window.location.assign('./home.html');
+        } else {
+            window.location.assign('./login.html');
+        }
+    });
+</script>

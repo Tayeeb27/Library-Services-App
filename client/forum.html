@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/book.ico">
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/forum.css">
+    <script src="javascript/forum.js" defer></script>
+    <title>Forum</title>
+</head>
+<body>
+    <script src="javascript/navAndFoot.js"></script>
+    <section id="nav"></section>
+    <div class="center-text">
+      <h1>Our Forum Page</h1>
+      <p>Welcome to our Forum Page where you can discuss about your favourite books or regarding something in the community</p>
+      <p>You can also search and filter our books to find the book that your after</p>
+    </div>
+    <div class="forum">
+        <button id="book-club-label" class="tab-label" onclick="openTab('book-club')">Book Club Forum</button>
+        <button id="communities-label" class="tab-label" onclick="openTab('communities')">Communities Forum</button>
+    </div>
+    <div id="book-club-content" class="tab-content">
+      <div class="intro">
+        <h2>Welcome to the Book Club</h2>
+        <p>Discuss your favourite books and authors here.</p>
+      </div>
+      <div class="form">
+        <form id="BPForm">
+          <div class="searchSection">
+            <label for="titleB">Title:</label>
+            <input type="text" id="titleB" placeholder="Title" required>
+          </div>
+          <div class="searchSection">
+            <label for="textBC">Post:</label>
+            <textarea type="text" id="contentB"></textarea>
+          </div>
+          <input type="submit" value="Post">
+        </form>
+      </div>
+      <div class="center">
+        <div id="book-posts" class="container">
+
+        </div>   
+      </div> 
+    </div>
+    <div id="communities-content" class="tab-content">
+      <div class="intro">
+        <h2>Welcome to the Communities</h2>
+        <p>Connect with the community and share your interests.</p>
+      </div>
+      <div class="form">
+        <form id="CPForm">
+          <div class="searchSection">
+            <label for="titleC">Title:</label>
+            <input type="text" id="titleC" placeholder="Title" required>
+          </div>
+          <div class="searchSection">
+            <label for="contentC">Post:</label>
+            <textarea type="text" id="contentC"></textarea>
+          </div>
+          <input type="submit" value="Post"> 
+        </form>
+      </div>
+      <div class="center">
+        <div id="community-posts" class="container"></div>  
+      </div>
+      </div>
+    
+    <iframe src="footer.html" frameborder="0" scrolling="no" width="100%" height="100"></iframe>
+
+</body>
+</html>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"
+></script>
+<script>
+  $(function(){
+    $("#nav").load("navbar.html");
+  });
+</script>

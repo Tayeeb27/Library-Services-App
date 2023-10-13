@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+#editForm {
+  display: none;
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+}
+
+.Search {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: large;
+  padding: 10px;
+  display: flex;
+}
+
+.searchSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2000px;
+}
+
+.searchSection label {
+  margin-left: 20px;
+  width: 8%;
+}
+
+.searchSection input {
+  margin-left: 20px;
+  width: 30%;
+}
+
+.searchSection textarea {
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 30%;
+  min-height: 50px;
+  resize: vertical;
+}
+
+
+.Search button {
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 50%;
+  margin-right: 50%;
+}
+
+.center {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.books {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-y: scroll;
+  height: 1090px;
+  margin-bottom: 10px;
+}
+
+.book {
+  border-style: none;
+  border-width: 10px;
+  margin-bottom: 20px;
+  width: 98%;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  padding-left: 2%;
+}
+
+.infoContainer {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.infoContainer p {
+  padding: 0.5%;
+}
+
+
+.infoContainer img {
+  max-width: 20%;
+  border-radius: 5%;
+  float: left;
+  margin: 5px;
+  margin-right: 3%;
+}
+
+
+.book button {
+  margin-right: 10px;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  cursor: pointer;
+  float: right;
+}
+
+.edit {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  border-style: none;
+  border-width: 10px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.editSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.edit form {
+  padding: 10px;
+  width: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.editSection label {
+  font-family: "Roboto", sans-serif;
+  margin-left: 20px;
+  width: 8%;
+}
+
+.editSection input {
+  margin-left: 20px;
+  width: 30%;
+}
+
+.editSection textarea {
+  font-family: "Roboto", sans-serif;
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 30%;
+  min-height: 50px;
+  resize: vertical;
+}
+
+
+.edit button {
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 50%;
+  margin-right: 50%;
+}
+#bookForm label, textarea {
+  font-family: "Roboto", sans-serif;
+}
