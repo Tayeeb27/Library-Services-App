@@ -16,6 +16,10 @@
     /* This property will maintain the aspect ratio and crop if needed */
 }
 
+img {
+    border-radius: 5%;
+}
+
 h1 {
     text-align: center;
 }

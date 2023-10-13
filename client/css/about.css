@@ -13,19 +13,20 @@
     outline: 10px;
 }
 
-.img {}
-
-.belowImg {}
+.img {
+    border-radius: 5%;
+}
 
 h1 {
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .center-text {
-    text-align: center; 
-  }
-  
-  .center-text p {
-    margin: 0 auto; 
-  }
+    text-align: center;
+}
+
+.center-text p {
+    margin: 0 auto;
+}
