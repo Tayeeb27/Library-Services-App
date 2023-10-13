@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
 .container {
     margin-top: 500px;
     width: 800px;
@@ -6,10 +7,11 @@
     margin: auto;
     border-style: none;
     border-color: #ff4d6d;
+    min-height: 1200px;
 }
 
 h1 {
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -40,7 +42,7 @@ label {
 
 input {
     font-size: large;
-    width:400px
+    width: 400px
 }
 
 textarea {
@@ -59,7 +61,7 @@ input[type="submit"] {
     padding: 8px 16px;
     text-decoration: none;
     cursor: pointer;
-    width:250px;
+    width: 250px;
 }
 
 p {

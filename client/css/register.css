@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
 .container {
     width: 500px;
     margin: auto;
-    border-style: none;
-    border-color: #ff4d6d;
+    min-height: 1000px;
 }
 
 /* Form css */
@@ -35,7 +35,7 @@ label {
 
 .register input {
     font-size: large;
-    width:400px;
+    width: 400px;
     height: 35px;
 }
 
@@ -48,8 +48,8 @@ label {
     padding: 8px 16px;
     font-size: 24px;
     border-radius: 5%;
-    width:200px;
-    height:45px;
+    width: 200px;
+    height: 45px;
 }
 
 p {
@@ -57,6 +57,7 @@ p {
     justify-content: center;
     align-items: center;
 }
+
 h1 {
     display: flex;
     justify-content: center;
