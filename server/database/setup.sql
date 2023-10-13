@@ -28,7 +28,7 @@ VALUES
 ('When in Rome', 'Sarah Adams', 'When in Rome: The deliciously charming rom-com from the author of the TikTok sensation, THE CHEAT SHEET!', 'Fiction', 4.0, '2022-09-20', 'https://m.media-amazon.com/images/I/41esrpLG2BL._SY445_SX342_.jpg'),
 ('Harry Potter', 'J. K. Rowling', 'The novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry', 'Fantasy', 4.8, '1997-06-25', 'https://m.media-amazon.com/images/I/51zZ3SAulVL._SY445_SX342_.jpg'),
 ('The Idiot', 'Fyodor Dostoevsky', '“The Idiot” tells the story of a young prince called Lev Nikolayevich Myshkin whose simple goodness is wrongly confused with a lack of intelligence by all he encounters.', 'Foreign', 4.5, '1868-01-01', 'https://m.media-amazon.com/images/I/71ODBY2ChvL._SY466_.jpg'),
-('Doll House', 'John Hunt', 'A Doll house Horror Story', 'Horror', 4.4, '2017-01-25', 'https://m.media-amazon.com/images/I/81HRGUehn1L._SY385_.jpg');
+('Doll House', 'John Hunt', 'A Doll house Horror Story', 'Horror', 4.4, '2017-01-25', 'https://m.media-amazon.com/images/I/81HRGUehn1L._SY385_.jpg'),
 ('To Kill a Mockingbird', 'Harper Lee', 'The story of young Scout Finch and her brother Jem as they grow up in a racially divided Southern town.', 'Novel', 4.7, '1960-07-11', 'https://m.media-amazon.com/images/I/81c6aew79KL._SL1500_.jpg'),
 ('1984', 'George Orwell', 'A dystopian novel set in a totalitarian society under the surveillance of Big Brother.', 'Science Fiction', 4.5, '1949-06-08', 'https://m.media-amazon.com/images/I/91O1dxoUXoL._SL1500_.jpg'),
 ('Pride and Prejudice', 'Jane Austen', 'A novel of manners revolving around the marriage of the strong-willed Elizabeth Bennet and the haughty Mr. Darcy.', 'Novel', 4.8, '1813-01-28', 'https://m.media-amazon.com/images/I/81fygAyvKML._SL1500_.jpg'),
@@ -46,10 +46,6 @@ CREATE TABLE users (
     PRIMARY KEY (user_id)
 );
 
--- Insert data into the "users" table
-INSERT INTO users (name, email, password)
-VALUES
-
 -- Drop and create the "orders" table
 CREATE TABLE orders (
     order_id INT GENERATED ALWAYS AS IDENTITY,
@@ -61,14 +57,6 @@ CREATE TABLE orders (
     FOREIGN KEY (user_id) REFERENCES users(user_id),
     FOREIGN KEY (book_id) REFERENCES books(book_id)
 );
-
--- Insert data into the "orders" table
-INSERT INTO orders (user_id, book_id, collection_date, order_reference)
-VALUES
-(1, 4, '2023-09-05', '1234'),
-(2, 3, '2023-10-05', '1212'),
-(3, 5, '2023-01-01', '4321'),
-(4, 2, '2023-10-08', '2109');
 
 -- Create the "token" table
 CREATE TABLE token (
