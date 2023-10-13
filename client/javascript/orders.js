@@ -20,6 +20,10 @@ async function createOrderElement(data) {
     orderReference.innerHTML = `<b>Order Reference:</b> ${data['order_reference']}`;
     order.appendChild(orderReference);
 
+    const orderCollection = document.createElement('p');
+    orderCollection.innerHTML = `<b>Collected:</b> Not yet`;
+    order.appendChild(orderCollection);
+
     return order;
 }
 
